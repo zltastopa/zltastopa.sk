@@ -228,7 +228,7 @@
       max-width: 980px;
       margin-inline: auto;
       text-align: center;
-      padding: 1.75rem 0 0.1rem;
+      padding: 4rem 0 0.1rem;
     }
 
     .hero-copy h1 {
@@ -309,7 +309,7 @@
     .steps-wrap {
       position: relative;
       z-index: 3;
-      margin-top: 2.05rem;
+      margin-top: 4rem;
       scroll-margin-top: calc(var(--header-h) + 18px);
     }
 
@@ -496,7 +496,8 @@
       border: 0;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: inset 0 0 0 1px var(--edge-soft), 0 4px 12px rgb(0 0 0 / 0.06);
+      background: var(--white);
+      box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.16);
     }
 
     summary {
@@ -516,16 +517,32 @@
     }
 
     .summary-icon {
+      position: relative;
       width: 2rem;
       height: 2rem;
       border-radius: 999px;
       border: 1.5px solid var(--black);
-      display: grid;
-      place-items: center;
-      font-size: 1.3rem;
-      font-weight: 900;
+      display: block;
       transition: transform 180ms ease;
       flex: 0 0 auto;
+      transform-origin: 50% 50%;
+    }
+
+    .summary-icon::before,
+    .summary-icon::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0.9rem;
+      height: 2px;
+      background: var(--black);
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+    }
+
+    .summary-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
     }
 
     details[open] .summary-icon {
@@ -743,7 +760,7 @@
     }
 
     .site-footer {
-      border-top: 1px solid var(--edge-soft);
+      border-top: 0;
       margin-top: 2.1rem;
       padding: 1.25rem 0 1.75rem;
     }
@@ -1091,7 +1108,7 @@
                 <details>
                   <summary>
                     <span>Zobraziť pokročilé možnosti</span>
-                    <span class="summary-icon" aria-hidden="true">+</span>
+                    <span class="summary-icon" aria-hidden="true"></span>
                   </summary>
                   <div class="details-content">
                     <p>Voliteľné environment premenné:</p>
@@ -1157,7 +1174,7 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
           <details>
             <summary>
               <span>Zobraziť všetkých 31 red flagov</span>
-              <span class="summary-icon" aria-hidden="true">+</span>
+              <span class="summary-icon" aria-hidden="true"></span>
             </summary>
             <div class="details-content">
               <div class="flag-legend">
