@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zltá Stopa</title>
-  <meta name="description" content="Zltá Stopa - investigatívny toolkit pre CRZ a verejné dokumenty." />
+  <title>Žltá Stopa</title>
+  <meta name="description" content="Žltá Stopa - investigatívny nástroj pre CRZ a verejné dokumenty." />
   <link rel="icon" type="image/png" href="zltastopa.png" />
   <style>
     :root {
       --black: #000000;
       --white: #ffffff;
       --yellow: #f2c63d;
-      --radius: 20px;
-      --max: 1120px;
-      --header-h: 74px;
+      --card-radius: 26px;
+      --max: 1320px;
+      --header-h: 70px;
     }
 
     * {
@@ -38,25 +38,21 @@
       color: var(--black);
     }
 
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
-
     :focus-visible {
       outline: 3px solid var(--yellow);
       outline-offset: 2px;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .container {
-      width: min(var(--max), calc(100% - 2rem));
+      width: min(var(--max), calc(100% - 2.25rem));
       margin-inline: auto;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 80;
       background: var(--white);
       border-bottom: 1px solid var(--black);
       min-height: var(--header-h);
@@ -66,211 +62,223 @@
       min-height: var(--header-h);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-logo {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      object-fit: cover;
-      border: 1px solid var(--black);
-      background: var(--yellow);
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      font-size: 1.02rem;
+      justify-content: flex-end;
     }
 
     .top-nav {
       display: inline-flex;
+      gap: 1.25rem;
       align-items: center;
-      gap: 1rem;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
     .top-nav a {
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      padding-bottom: 0.1rem;
+      padding-bottom: 0.15rem;
     }
 
     .top-nav a:hover {
       border-color: var(--black);
-      text-decoration: none;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.5rem;
-      align-items: center;
-      padding: clamp(3rem, 10vh, 7rem) 0 clamp(2.5rem, 8vh, 5rem);
+    .above-fold {
       position: relative;
       overflow: clip;
+      padding: 0.75rem 0 1.25rem;
+      min-height: calc(100svh - var(--header-h));
     }
 
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.5rem, 8.6vw, 6.25rem);
-      line-height: 0.92;
-      letter-spacing: -0.04em;
-      max-width: 10ch;
-    }
-
-    .hero p {
-      margin: 0;
-      font-size: clamp(1rem, 2.4vw, 1.25rem);
-      max-width: 46ch;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.9rem 1.2rem;
-    }
-
-    .btn {
-      border: 2px solid var(--black);
-      border-radius: 999px;
-      padding: 0.82rem 1.15rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-    }
-
-    .btn-primary {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      background: var(--yellow);
-      color: var(--black);
-    }
-
-    .btn-ghost {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    .btn-ghost:hover {
-      transform: translateY(-1px);
-      background: var(--yellow);
-    }
-
-    .hero-link {
-      text-decoration: none;
-      font-weight: 700;
-      border-bottom: 1px solid var(--black);
-      padding-bottom: 0.15rem;
-    }
-
-    .hero-link:hover {
-      background: var(--yellow);
-      text-decoration: none;
-    }
-
-    .hero-art {
-      min-height: 410px;
-      position: relative;
-    }
-
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--yellow);
-      z-index: 1;
-    }
-
-    .bubble.b1 {
-      width: min(42vw, 320px);
-      height: min(42vw, 320px);
-      right: 3%;
-      top: 16%;
-    }
-
-    .bubble.b2 {
-      width: min(30vw, 210px);
-      height: min(30vw, 210px);
-      right: 35%;
-      top: 42%;
-    }
-
-    .bubble.b3 {
-      width: 86px;
-      height: 86px;
-      right: 2%;
-      top: 3%;
-    }
-
-    .trail {
+    .stage-deco {
       position: absolute;
       inset: 0;
       pointer-events: none;
       z-index: 0;
     }
 
-    .trail span {
+    .bubble {
       position: absolute;
-      width: 11px;
-      height: 11px;
       border-radius: 50%;
       background: var(--yellow);
     }
 
-    .trail span:nth-child(1) { right: 34%; top: 28%; }
-    .trail span:nth-child(2) { right: 30%; top: 25%; }
-    .trail span:nth-child(3) { right: 26%; top: 22%; }
-    .trail span:nth-child(4) { right: 22%; top: 19%; }
-    .trail span:nth-child(5) { right: 18%; top: 16%; }
-    .trail span:nth-child(6) { right: 14%; top: 13%; }
-    .trail span:nth-child(7) { right: 10%; top: 10%; }
-
-    .section {
-      padding: clamp(2.5rem, 8vh, 4.5rem) 0;
-      scroll-margin-top: calc(var(--header-h) + 14px);
+    .bubble.hero-a {
+      width: min(56vw, 760px);
+      height: min(56vw, 760px);
+      right: -14%;
+      top: 16%;
     }
 
-    .section h2 {
-      margin: 0 0 1.25rem;
-      font-size: clamp(1.5rem, 4vw, 2.8rem);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
+    .bubble.hero-b {
+      width: min(38vw, 500px);
+      height: min(38vw, 500px);
+      right: 21%;
+      top: 36%;
     }
 
-    .section-intro {
-      margin: 0 0 2rem;
-      font-size: 1.05rem;
-      max-width: 62ch;
+    .bubble.hero-c {
+      width: min(12vw, 150px);
+      height: min(12vw, 150px);
+      right: 14%;
+      top: 8%;
+    }
+
+    .bubble.hero-d {
+      width: min(14vw, 180px);
+      height: min(14vw, 180px);
+      left: -4%;
+      top: 36%;
+    }
+
+    .trail {
+      position: absolute;
+      inset: 0;
+    }
+
+    .trail i {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--yellow);
+      display: block;
+    }
+
+    .trail i:nth-child(1) { width: 16px; height: 16px; right: 43%; top: 22%; }
+    .trail i:nth-child(2) { width: 14px; height: 14px; right: 40%; top: 20%; }
+    .trail i:nth-child(3) { width: 13px; height: 13px; right: 37%; top: 18%; }
+    .trail i:nth-child(4) { width: 12px; height: 12px; right: 34%; top: 16%; }
+    .trail i:nth-child(5) { width: 11px; height: 11px; right: 31%; top: 14%; }
+    .trail i:nth-child(6) { width: 10px; height: 10px; right: 28%; top: 12.5%; }
+    .trail i:nth-child(7) { width: 9px; height: 9px; right: 25%; top: 11%; }
+    .trail i:nth-child(8) { width: 8px; height: 8px; right: 22%; top: 10%; }
+
+    .logo-stage {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      margin: clamp(0.75rem, 2.2vw, 1.25rem) 0 0.5rem;
+    }
+
+    .logo-stage img {
+      width: clamp(300px, 46vw, 740px);
+      max-width: 100%;
+      height: auto;
+      display: block;
+      filter: contrast(1.04);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+      padding: 0.2rem 0 0.4rem;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-copy p {
+      margin: 1rem auto 0;
+      font-size: clamp(1.02rem, 2vw, 1.35rem);
+      line-height: 1.4;
+      max-width: 34ch;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      margin-top: 1.3rem;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-radius: 999px;
+      padding: 0.86rem 1.2rem;
+      font-size: 0.97rem;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .btn-primary {
+      border: none;
+      background: var(--yellow);
+      color: var(--black);
+      box-shadow: inset 0 0 0 1px var(--yellow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: var(--black);
+      color: var(--white);
+      box-shadow: inset 0 0 0 1px var(--black);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-1px);
+      background: var(--yellow);
+      border-color: var(--black);
+    }
+
+    .hero-link {
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 0.18rem;
+    }
+
+    .hero-link:hover {
+      background: var(--yellow);
+    }
+
+    .steps-wrap {
+      position: relative;
+      z-index: 3;
+      margin-top: 1.2rem;
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+
+    .steps-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .steps-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5.4vw, 3.9rem);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .steps-head p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.92rem;
     }
 
     .steps-grid {
@@ -280,102 +288,114 @@
     }
 
     .step-card {
-      border: 1.5px solid var(--black);
-      border-radius: var(--radius);
+      background: var(--white);
+      border: 2px solid var(--black);
+      border-radius: var(--card-radius);
       padding: 1.1rem;
       position: relative;
       overflow: hidden;
+      min-height: 402px;
     }
 
-    .step-card::after {
+    .step-card::before {
       content: "";
       position: absolute;
-      width: 58px;
-      height: 58px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: var(--yellow);
-      right: -16px;
-      top: -16px;
+      right: -95px;
+      top: -98px;
       z-index: 0;
     }
 
     .step-head,
     .step-body {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .step-head {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 0.8rem;
-      gap: 0.75rem;
+      gap: 0.7rem;
+      margin-bottom: 0.65rem;
     }
 
     .step-number {
-      font-size: 2.5rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
+      margin: 0;
+      font-size: 3.25rem;
       line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 900;
     }
 
     .step-icon {
-      font-size: 1.35rem;
-      font-weight: 900;
-      border: 1px solid var(--black);
+      width: 2.2rem;
+      height: 2.2rem;
       border-radius: 999px;
-      min-width: 2rem;
-      height: 2rem;
-      display: inline-grid;
+      border: 2px solid var(--black);
+      display: grid;
       place-items: center;
       background: var(--white);
+      font-size: 1.25rem;
+      font-weight: 900;
     }
 
     .step-title {
       margin: 0;
-      font-size: 1.28rem;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.6rem, 2.1vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
     }
 
     .step-copy {
       margin: 0.55rem 0 0;
-      line-height: 1.4;
-      font-size: 0.98rem;
-      max-width: 40ch;
+      font-size: 1rem;
+      line-height: 1.35;
+      max-width: 36ch;
+      font-weight: 550;
     }
 
     .runner-tiles {
       margin-top: 1rem;
       display: grid;
+      gap: 0.65rem;
       grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
     }
 
     .runner-tile {
-      border: 1.5px solid var(--black);
-      border-radius: 12px;
-      padding: 0.75rem 0.8rem;
-      text-decoration: none;
-      font-weight: 700;
+      border: 2px solid var(--black);
+      border-radius: 15px;
+      min-height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.6rem;
-      transition: transform 180ms ease, background-color 180ms ease;
-      min-height: 58px;
+      gap: 0.55rem;
+      padding: 0.74rem 0.8rem;
+      text-decoration: none;
+      transition: transform 180ms ease, background-color 180ms ease, border-width 180ms ease;
+      font-weight: 800;
+      line-height: 1.05;
+      font-size: 1.05rem;
     }
 
     .runner-tile:hover {
       background: var(--yellow);
+      border-width: 3px;
       transform: translateY(-1px);
-      text-decoration: none;
+    }
+
+    .runner-arrow {
+      font-size: 1.3rem;
+      line-height: 1;
     }
 
     .code-wrap {
-      margin-top: 1rem;
-      border: 1.5px solid var(--black);
-      border-radius: 14px;
+      margin-top: 0.95rem;
+      border: 2px solid var(--black);
+      border-radius: 15px;
       overflow: hidden;
     }
 
@@ -385,8 +405,8 @@
       background: var(--black);
       color: var(--white);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9rem;
-      line-height: 1.45;
+      font-size: 0.96rem;
+      line-height: 1.42;
       white-space: pre-wrap;
       word-break: break-word;
     }
@@ -395,44 +415,40 @@
       margin-top: 0.7rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
       flex-wrap: wrap;
+      gap: 0.72rem;
     }
 
     .copy-status {
-      font-size: 0.85rem;
-      font-weight: 600;
-      min-height: 1.2em;
+      min-height: 1em;
+      font-size: 0.88rem;
+      font-weight: 700;
     }
 
     .mini-note {
-      margin-top: 0.7rem;
-      font-size: 0.88rem;
-      line-height: 1.4;
+      margin: 0.7rem 0 0;
+      font-size: 1rem;
+      line-height: 1.36;
+      font-weight: 550;
     }
 
     details {
-      border: 1.5px solid var(--black);
-      border-radius: 14px;
-      margin-top: 0.9rem;
-      overflow: clip;
-      transition: border-radius 180ms ease;
-    }
-
-    details[open] {
-      border-radius: 14px;
+      margin-top: 0.95rem;
+      border: 2px solid var(--black);
+      border-radius: 16px;
+      overflow: hidden;
     }
 
     summary {
       list-style: none;
       cursor: pointer;
-      padding: 0.8rem;
-      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
-      background: var(--white);
+      padding: 0.84rem 0.9rem;
+      font-size: 1.02rem;
+      font-weight: 800;
     }
 
     summary::-webkit-details-marker {
@@ -440,15 +456,16 @@
     }
 
     .summary-icon {
-      border: 1px solid var(--black);
+      width: 2rem;
+      height: 2rem;
       border-radius: 999px;
-      width: 1.6rem;
-      height: 1.6rem;
-      display: inline-grid;
+      border: 2px solid var(--black);
+      display: grid;
       place-items: center;
-      font-weight: 800;
-      flex: 0 0 auto;
+      font-size: 1.3rem;
+      font-weight: 900;
       transition: transform 180ms ease;
+      flex: 0 0 auto;
     }
 
     details[open] .summary-icon {
@@ -456,115 +473,142 @@
     }
 
     .details-content {
-      border-top: 1.5px solid var(--black);
-      padding: 0.8rem;
+      border-top: 2px solid var(--black);
+      padding: 0.86rem 0.9rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
     .details-content p,
     .details-content ul {
-      margin: 0.4rem 0;
-      font-size: 0.93rem;
-      line-height: 1.45;
+      margin: 0.36rem 0;
     }
 
     .details-content ul {
-      padding-left: 1rem;
+      padding-left: 1.1rem;
     }
 
     .details-content pre {
-      margin: 0.5rem 0;
-      padding: 0.6rem;
+      margin: 0.46rem 0;
+      padding: 0.65rem;
+      border-radius: 11px;
       background: var(--black);
       color: var(--white);
-      border-radius: 10px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       white-space: pre-wrap;
-      word-break: break-word;
+    }
+
+    .section {
+      padding: 2.6rem 0;
+      position: relative;
+      scroll-margin-top: calc(var(--header-h) + 10px);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4.1vw, 3.1rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .section-intro {
+      margin: 0.9rem 0 0;
+      font-size: 1rem;
+      max-width: 66ch;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .trust-list {
-      margin: 0;
+      margin: 1.1rem 0 0;
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 0.6rem;
-      max-width: 78ch;
+      gap: 0.65rem;
+      max-width: 82ch;
     }
 
     .trust-list li {
-      border: 1px solid var(--black);
-      border-radius: 12px;
-      padding: 0.7rem 0.85rem;
-      font-weight: 600;
-      line-height: 1.35;
+      border: 2px solid var(--black);
+      border-radius: 14px;
+      padding: 0.74rem 0.85rem;
+      font-weight: 700;
+      line-height: 1.33;
+      background: var(--white);
     }
 
     .disclaimer {
-      margin: 1rem 0 0;
-      font-size: 0.88rem;
-      line-height: 1.4;
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 650;
       border-left: 3px solid var(--black);
       padding-left: 0.7rem;
-      max-width: 62ch;
+      max-width: 66ch;
+      line-height: 1.4;
     }
 
     .method-card {
-      max-width: 76ch;
+      max-width: 86ch;
     }
 
     .method-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 0.45rem;
-      font-size: 0.88rem;
+      margin-top: 0.52rem;
+      font-size: 0.9rem;
     }
 
     .method-table th,
     .method-table td {
-      border: 1px solid var(--black);
-      padding: 0.45rem;
+      border: 2px solid var(--black);
       text-align: left;
       vertical-align: top;
+      padding: 0.48rem 0.52rem;
+      line-height: 1.3;
     }
 
     .method-table th {
       background: var(--yellow);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .download-link {
       display: inline-block;
-      margin-top: 0.65rem;
-      font-weight: 700;
+      margin-top: 0.72rem;
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
 
     .badges {
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.7rem;
+      gap: 0.55rem;
     }
 
     .badge {
-      border: 1px solid var(--black);
+      border: 2px solid var(--black);
       border-radius: 999px;
-      padding: 0.36rem 0.66rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      white-space: nowrap;
+      padding: 0.4rem 0.72rem;
+      font-size: 0.84rem;
+      font-weight: 800;
+      background: var(--white);
     }
 
     .integrations-note {
-      margin: 1rem 0 0;
-      font-size: 0.98rem;
-      max-width: 58ch;
+      margin-top: 0.95rem;
+      max-width: 66ch;
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.4;
     }
 
     .site-footer {
-      border-top: 1px solid var(--black);
-      margin-top: clamp(2.5rem, 8vh, 4rem);
-      padding: 1.4rem 0 1.8rem;
+      border-top: 2px solid var(--black);
+      margin-top: 2.1rem;
+      padding: 1.25rem 0 1.75rem;
     }
 
     .footer-grid {
@@ -572,15 +616,16 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.75rem 1rem;
     }
 
     .footer-main {
-      font-size: 0.95rem;
-      display: inline-flex;
-      gap: 0.95rem;
+      display: flex;
       align-items: center;
       flex-wrap: wrap;
+      gap: 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
     .easter-egg {
@@ -593,56 +638,119 @@
       display: none;
     }
 
+    @media (max-width: 1180px) {
+      .step-card {
+        min-height: 390px;
+      }
+
+      .bubble.hero-a {
+        right: -21%;
+      }
+
+      .bubble.hero-b {
+        right: 11%;
+      }
+    }
+
     @media (max-width: 1000px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding-top: 2.5rem;
-      }
-
-      .hero-art {
-        min-height: 245px;
-      }
-
-      .bubble.b1 {
-        width: min(56vw, 320px);
-        height: min(56vw, 320px);
-        right: 6%;
-        top: 6%;
-      }
-
-      .bubble.b2 {
-        width: min(35vw, 180px);
-        height: min(35vw, 180px);
-        right: 43%;
-        top: 35%;
-      }
-
       .steps-grid {
         grid-template-columns: 1fr;
+      }
+
+      .step-card {
+        min-height: unset;
+      }
+
+      .steps-head {
+        display: block;
+      }
+
+      .steps-head p {
+        margin-top: 0.5rem;
+      }
+
+      .bubble.hero-a {
+        width: 82vw;
+        height: 82vw;
+        right: -30%;
+        top: 23%;
+      }
+
+      .bubble.hero-b {
+        width: 58vw;
+        height: 58vw;
+        right: 8%;
+        top: 44%;
       }
     }
 
     @media (max-width: 760px) {
       body {
-        padding-bottom: 78px;
+        padding-bottom: 84px;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 1.25rem));
+      }
+
+      .site-header {
+        min-height: 58px;
+      }
+
+      .header-inner {
+        min-height: 58px;
       }
 
       .top-nav {
-        gap: 0.7rem;
-        font-size: 0.8rem;
+        font-size: 0.84rem;
+        gap: 0.72rem;
       }
 
-      .hero h1 {
-        max-width: 12ch;
+      .logo-stage {
+        margin-top: 0.55rem;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .hero-copy h1 {
+        font-size: clamp(2rem, 11vw, 3.5rem);
+      }
+
+      .hero-copy p {
+        max-width: 26ch;
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        flex: 1;
       }
 
       .runner-tiles {
         grid-template-columns: 1fr;
+      }
+
+      .step-card::before {
+        width: 180px;
+        height: 180px;
+        right: -84px;
+        top: -84px;
+      }
+
+      .bubble.hero-a {
+        width: 96vw;
+        height: 96vw;
+        right: -42%;
+      }
+
+      .bubble.hero-b {
+        width: 68vw;
+        height: 68vw;
+        right: -2%;
+      }
+
+      .bubble.hero-d {
+        left: -11%;
       }
 
       .mobile-sticky {
@@ -652,21 +760,21 @@
         right: 0;
         bottom: 0;
         z-index: 90;
+        border-top: 2px solid var(--black);
         background: var(--white);
-        border-top: 1px solid var(--black);
-        padding: 0.6rem 0.8rem;
+        padding: 0.55rem 0.72rem;
         gap: 0.6rem;
         align-items: center;
       }
 
       .mobile-sticky .btn {
         flex: 1;
-        min-height: 46px;
+        min-height: 45px;
       }
 
       .mobile-sticky a {
-        font-size: 0.84rem;
-        font-weight: 700;
+        font-size: 0.83rem;
+        font-weight: 800;
         white-space: nowrap;
       }
     }
@@ -683,128 +791,136 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Zltá Stopa domov" id="top">
-        <img
-          class="brand-logo"
-          src="zltastopa.png"
-          alt="Logo Zltá Stopa"
-          onerror="this.onerror=null;this.src='/Users/hraska/Downloads/zltastopa.png';"
-        />
-        <span class="brand-name">Zltá Stopa</span>
-      </a>
       <nav class="top-nav" aria-label="Hlavná navigácia">
         <a href="#github">GitHub</a>
-        <a href="#steps">Docs</a>
-        <a href="#methodology">Methodology</a>
+        <a href="#steps">Návod</a>
+        <a href="#methodology">Metodika</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="container hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">Niektoré dokumenty smrdia.</h1>
-        <p>Zltá Stopa mení CRZ zmluvy a verejné dokumenty na vyhľadateľné signály a prepojené stopy.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary js-copy" type="button" data-copy-target="installInstruction">Copy install instruction</button>
-          <a class="hero-link" href="#steps">See how it works →</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <span class="bubble b1"></span>
-        <span class="bubble b2"></span>
-        <span class="bubble b3"></span>
+    <section class="above-fold" aria-labelledby="hero-title">
+      <div class="stage-deco" aria-hidden="true">
+        <span class="bubble hero-a"></span>
+        <span class="bubble hero-b"></span>
+        <span class="bubble hero-c"></span>
+        <span class="bubble hero-d"></span>
         <div class="trail">
-          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="steps">
       <div class="container">
-        <h2>Install in 3 steps</h2>
-        <div class="steps-grid">
-          <article class="step-card" aria-labelledby="step1-title">
-            <div class="step-head">
-              <span class="step-number">1</span>
-              <span class="step-icon" aria-hidden="true">◎</span>
-            </div>
-            <div class="step-body">
-              <h3 class="step-title" id="step1-title">Nainštaluj runner</h3>
-              <p class="step-copy">Vyber si nástroj, kde budeš toolkit spúšťať.</p>
-              <div class="runner-tiles">
-                <a class="runner-tile" href="https://claude.ai/download" target="_blank" rel="noreferrer noopener">
-                  <span>Claude Desktop</span><span aria-hidden="true">↗</span>
-                </a>
-                <a class="runner-tile" href="https://openai.com/codex" target="_blank" rel="noreferrer noopener">
-                  <span>Codex App</span><span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-          </article>
+        <div class="logo-stage" id="top">
+          <img
+            src="zltastopa.png"
+            alt="Žltá Stopa"
+            onerror="this.onerror=null;this.src='/Users/hraska/Downloads/zltastopa.png';"
+          />
+        </div>
 
-          <article class="step-card" aria-labelledby="step2-title">
-            <div class="step-head">
-              <span class="step-number">2</span>
-              <span class="step-icon" aria-hidden="true">⌘</span>
-            </div>
-            <div class="step-body">
-              <h3 class="step-title" id="step2-title">Vlož tento pokyn</h3>
-              <div class="code-wrap">
-                <pre class="install-code" id="installInstruction">PASTE THIS INTO CLAUDE/CODEX:
+        <div class="hero-copy">
+          <h1 id="hero-title">Niektoré dokumenty smrdia.</h1>
+          <p>Žltá Stopa mení CRZ zmluvy a verejné dokumenty na signály, ktoré vieš hneď prehľadať a poskladať do stopy.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary js-copy" type="button" data-copy-target="installInstruction">Skopírovať inštrukciu</button>
+            <a class="hero-link" href="#steps">Pozri, ako to funguje →</a>
+          </div>
+        </div>
+
+        <div class="steps-wrap" id="steps">
+          <div class="steps-head">
+            <h2>Nainštaluj za 60 sekúnd</h2>
+            <p>3 kroky. Bez zbytočností.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card" aria-labelledby="step1-title">
+              <div class="step-head">
+                <p class="step-number">1</p>
+                <span class="step-icon" aria-hidden="true">◎</span>
+              </div>
+              <div class="step-body">
+                <h3 class="step-title" id="step1-title">Spusti runner</h3>
+                <p class="step-copy">Nainštaluj prostredie, v ktorom bude nástroj bežať.</p>
+                <div class="runner-tiles">
+                  <a class="runner-tile" href="https://claude.ai/download" target="_blank" rel="noreferrer noopener">
+                    <span>Claude<br />Desktop</span>
+                    <span class="runner-arrow" aria-hidden="true">↗</span>
+                  </a>
+                  <a class="runner-tile" href="https://openai.com/codex" target="_blank" rel="noreferrer noopener">
+                    <span>Codex App</span>
+                    <span class="runner-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="step-card" aria-labelledby="step2-title">
+              <div class="step-head">
+                <p class="step-number">2</p>
+                <span class="step-icon" aria-hidden="true">⌘</span>
+              </div>
+              <div class="step-body">
+                <h3 class="step-title" id="step2-title">Vlož tento pokyn</h3>
+                <div class="code-wrap">
+                  <pre class="install-code" id="installInstruction">VLOŽ DO CLAUDE/CODEX:
 &lt;INSTALL_INSTRUCTION_PLACEHOLDER&gt;</pre>
-              </div>
-              <div class="code-actions">
-                <button class="btn btn-ghost js-copy" type="button" data-copy-target="installInstruction">Copy</button>
-                <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
-              </div>
-              <p class="mini-note">This will install the Zltá Stopa toolkit skills automatically.</p>
+                </div>
+                <div class="code-actions">
+                  <button class="btn btn-outline js-copy" type="button" data-copy-target="installInstruction">Kopírovať</button>
+                  <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
+                </div>
+                <p class="mini-note">Týmto sa automaticky nainštalujú zručnosti toolkitu Žltá Stopa.</p>
 
-              <details>
-                <summary>
-                  <span>Show advanced options</span>
-                  <span class="summary-icon" aria-hidden="true">+</span>
-                </summary>
-                <div class="details-content">
-                  <p>Voliteľné environment premenné:</p>
-                  <pre>ZTASTOPA_ENV=&lt;dev|prod&gt;
+                <details>
+                  <summary>
+                    <span>Zobraziť pokročilé možnosti</span>
+                    <span class="summary-icon" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="details-content">
+                    <p>Voliteľné environment premenné:</p>
+                    <pre>ZTASTOPA_ENV=&lt;dev|prod&gt;
 ZTASTOPA_DATA_DIR=&lt;/path/to/storage&gt;
 ZTASTOPA_CACHE_DAYS=&lt;number&gt;
 ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
-                  <p>Power-user mode (voliteľné):</p>
-                  <ul>
-                    <li>Paralelné spúšťanie agentov pre viac firiem naraz.</li>
-                    <li>Prísnejšie pravidlá na označovanie rizík.</li>
-                    <li>Export výsledkov do JSON/CSV pre newsroom workflow.</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </article>
+                    <p>Power-user režim (voliteľné):</p>
+                    <ul>
+                      <li>Paralelné spúšťanie agentov pre viac subjektov naraz.</li>
+                      <li>Prísnejšie prahy pri red-flag pravidlách.</li>
+                      <li>Export výstupov do JSON/CSV pre redakčný workflow.</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </article>
 
-          <article class="step-card" aria-labelledby="step3-title">
-            <div class="step-head">
-              <span class="step-number">3</span>
-              <span class="step-icon" aria-hidden="true">●</span>
-            </div>
-            <div class="step-body">
-              <h3 class="step-title" id="step3-title">Uži si newsroom tím</h3>
-              <p class="step-copy">5 špecialistov pracuje paralelne: CRZ reader, FOAF linker, finančný analytik, debt checker, skeptical fact-checker.</p>
-            </div>
-          </article>
+            <article class="step-card" aria-labelledby="step3-title">
+              <div class="step-head">
+                <p class="step-number">3</p>
+                <span class="step-icon" aria-hidden="true">●</span>
+              </div>
+              <div class="step-body">
+                <h3 class="step-title" id="step3-title">Zapni newsroom tím</h3>
+                <p class="step-copy">5 špecialistov pracuje paralelne: čítač CRZ, FOAF linker, finančný analytik, kontrolór dlhov, skeptický overovač faktov.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="docs">
       <div class="container">
-        <h2>Čo získaš</h2>
+        <h2>Čo získaš hneď</h2>
+        <p class="section-intro">Rýchly prehľad rizík bez toho, aby si ručne preklikával stovky dokumentov.</p>
         <ul class="trust-list">
-          <li>CRZ cleaned + updated daily</li>
-          <li>31 red-flag rules (info / warning / danger)</li>
-          <li>Sources: CRZ, RUZ, Financial Administration reliability, VSZP debtors, Social Insurance debtors + LLM extraction</li>
+          <li>CRZ je čistené a aktualizované každý deň.</li>
+          <li>31 red-flag pravidiel (info / warning / danger).</li>
+          <li>Zdroje: CRZ, RUZ, Finančná správa (spoľahlivosť), VSZP dlžníci, Sociálna poisťovňa dlžníci + LLM extrakcia.</li>
         </ul>
-        <p class="disclaimer">Outputs are leads, not verdicts. Always verify sources.</p>
+        <p class="disclaimer">Výstupy sú stopy, nie verdikty. Vždy over zdroje.</p>
       </div>
     </section>
 
@@ -812,7 +928,7 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
       <div class="container method-card">
         <details>
           <summary>
-            <span>Red-flag methodology</span>
+            <span>Metodika red-flag</span>
             <span class="summary-icon" aria-hidden="true">+</span>
           </summary>
           <div class="details-content">
@@ -829,21 +945,21 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
                 <tr>
                   <td>Opakované dodatky tesne pred termínom</td>
                   <td>Warning</td>
-                  <td>Môže signalizovať netransparentnú zmenu rozsahu/ceny.</td>
+                  <td>Môže signalizovať netransparentnú zmenu rozsahu alebo ceny.</td>
                 </tr>
                 <tr>
                   <td>Dodávateľ na zozname dlžníkov</td>
                   <td>Danger</td>
-                  <td>Finančný stres partnera zvyšuje riziko zlyhania.</td>
+                  <td>Finančný stres partnera zvyšuje riziko zlyhania dodávky.</td>
                 </tr>
                 <tr>
                   <td>Neobvyklé personálne prepojenie vo FOAF grafe</td>
                   <td>Info</td>
-                  <td>Indikácia konfliktu záujmov, treba doplniť kontext.</td>
+                  <td>Možný konflikt záujmov, treba doplniť širší kontext.</td>
                 </tr>
               </tbody>
             </table>
-            <a class="download-link" href="#" role="button">Download full rules (JSON/CSV)</a>
+            <a class="download-link" href="#" role="button">Stiahnuť plné pravidlá (JSON/CSV)</a>
           </div>
         </details>
       </div>
@@ -851,17 +967,17 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
 
     <section class="section" id="integrations">
       <div class="container">
-        <h2>Integrations</h2>
+        <h2>Integrácie</h2>
         <div class="badges" aria-label="Integrácie">
           <span class="badge">CRZ</span>
           <span class="badge">RUZ</span>
           <span class="badge">FinStat</span>
           <span class="badge">FOAF</span>
           <span class="badge">VSZP</span>
-          <span class="badge">Social Insurance</span>
-          <span class="badge">Financial Admin</span>
+          <span class="badge">Sociálna poisťovňa</span>
+          <span class="badge">Finančná správa</span>
         </div>
-        <p class="integrations-note">More connectors can be added; the toolkit is modular.</p>
+        <p class="integrations-note">Toolkit je modulárny, ďalšie konektory vieme doplniť podľa potreby.</p>
       </div>
     </section>
   </main>
@@ -870,7 +986,7 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
     <div class="container footer-grid">
       <div class="footer-main">
         <strong>www.zltastopa.sk</strong>
-        <a href="https://github.com/" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a href="https://github.com/zltastopa/zltastopa.sk" target="_blank" rel="noreferrer noopener">GitHub</a>
         <a href="mailto:contact@zltastopa.sk">contact@zltastopa.sk</a>
       </div>
       <a class="easter-egg" href="#" aria-label="Some snow is better left untouched.">Some snow is better left untouched.</a>
@@ -878,7 +994,7 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
   </footer>
 
   <div class="mobile-sticky" aria-label="Rýchla inštalácia">
-    <button class="btn btn-primary js-copy" type="button" data-copy-target="installInstruction">Copy install instruction</button>
+    <button class="btn btn-primary js-copy" type="button" data-copy-target="installInstruction">Skopírovať inštrukciu</button>
     <a href="#steps">3 kroky</a>
   </div>
 
@@ -888,14 +1004,13 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
       var status = document.getElementById('copyStatus');
 
       function setStatus(message) {
-        if (status) {
-          status.textContent = message;
-          window.setTimeout(function () {
-            if (status.textContent === message) {
-              status.textContent = '';
-            }
-          }, 2200);
-        }
+        if (!status) return;
+        status.textContent = message;
+        window.setTimeout(function () {
+          if (status.textContent === message) {
+            status.textContent = '';
+          }
+        }, 2200);
       }
 
       function copyText(text) {
@@ -915,12 +1030,12 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
             var ok = document.execCommand('copy');
             document.body.removeChild(area);
             if (!ok) {
-              reject(new Error('Copy failed'));
+              reject(new Error('copy failed'));
               return;
             }
             resolve();
-          } catch (err) {
-            reject(err);
+          } catch (error) {
+            reject(error);
           }
         });
       }
@@ -930,25 +1045,25 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
           var targetId = button.getAttribute('data-copy-target');
           var target = document.getElementById(targetId);
           if (!target) return;
-          var text = target.textContent.trim();
-          copyText(text)
+
+          copyText(target.textContent.trim())
             .then(function () {
-              var previous = button.textContent;
-              button.textContent = 'Copied';
-              setStatus('Instruction copied.');
+              var oldText = button.textContent;
+              button.textContent = 'Skopírované';
+              setStatus('Inštrukcia je skopírovaná.');
               window.setTimeout(function () {
-                button.textContent = previous;
+                button.textContent = oldText;
               }, 1400);
             })
             .catch(function () {
-              setStatus('Copy failed. Copy manually from the block.');
+              setStatus('Kopírovanie zlyhalo. Skopíruj text ručne.');
             });
         });
       });
 
-      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          var href = link.getAttribute('href');
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (event) {
+          var href = anchor.getAttribute('href');
           if (!href || href === '#') return;
           var target = document.querySelector(href);
           if (!target) return;
