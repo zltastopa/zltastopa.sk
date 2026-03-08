@@ -446,6 +446,21 @@
       grid-template-columns: 1fr 1fr;
     }
 
+    .runner-more {
+      margin-top: 0.62rem;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .runner-more a {
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+      margin-right: 0.55rem;
+    }
+
     .runner-tile {
       border: 0;
       border-radius: 15px;
@@ -1113,11 +1128,11 @@
                 <span class="step-icon" aria-hidden="true">◎</span>
               </div>
               <div class="step-body">
-                <h3 class="step-title" id="step1-title">Spusti runner</h3>
-                <p class="step-copy">Nainštaluj prostredie, v ktorom bude nástroj bežať.</p>
+                <h3 class="step-title" id="step1-title">Vyber runner</h3>
+                <p class="step-copy">Najrýchlejšie to ide cez Codex App alebo Claude Cowork.</p>
                 <div class="runner-tiles">
-                  <a class="runner-tile" href="https://claude.ai/download" target="_blank" rel="noreferrer noopener">
-                    <span>Claude<br />Desktop</span>
+                  <a class="runner-tile" href="https://claude.ai/" target="_blank" rel="noreferrer noopener">
+                    <span>Claude<br />Cowork</span>
                     <span class="runner-arrow" aria-hidden="true">↗</span>
                   </a>
                   <a class="runner-tile" href="https://openai.com/codex" target="_blank" rel="noreferrer noopener">
@@ -1125,6 +1140,11 @@
                     <span class="runner-arrow" aria-hidden="true">↗</span>
                   </a>
                 </div>
+                <p class="runner-more">Ďalšie možnosti:
+                  <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noreferrer noopener">Claude Code</a>
+                  <a href="https://claude.ai/" target="_blank" rel="noreferrer noopener">Claude Web</a>
+                  <a href="https://claude.ai/download" target="_blank" rel="noreferrer noopener">Claude Desktop</a>
+                </p>
               </div>
             </article>
 
@@ -1134,33 +1154,33 @@
                 <span class="step-icon" aria-hidden="true">⌘</span>
               </div>
               <div class="step-body">
-                <h3 class="step-title" id="step2-title">Vlož tento pokyn</h3>
+                <h3 class="step-title" id="step2-title">Skopíruj a vlož pokyn</h3>
                 <div class="code-wrap">
-                  <pre class="install-code" id="installInstruction">VLOŽ DO CLAUDE/CODEX:
-&lt;INSTALL_INSTRUCTION_PLACEHOLDER&gt;</pre>
+                  <pre class="install-code" id="installInstruction">Choď na https://zltastopa.sk, otvor sekciu \"Inštrukcie pre AI\", potom otvor https://github.com/zltastopa/zltastopa, prečítaj README.md a AGENTS.md a nainštaluj všetky skills.</pre>
                 </div>
                 <div class="code-actions">
                   <button class="btn btn-outline js-copy" type="button" data-copy-target="installInstruction">Kopírovať</button>
                   <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
                 </div>
-                <p class="mini-note">Týmto sa automaticky nainštalujú zručnosti toolkitu Žltá Stopa.</p>
+                <p class="mini-note">Toto je presný prompt, ktorý má agent vykonať krok po kroku.</p>
 
                 <details>
                   <summary>
-                    <span>Zobraziť pokročilé možnosti</span>
+                    <span>Inštrukcie pre AI</span>
                     <span class="summary-icon" aria-hidden="true"></span>
                   </summary>
                   <div class="details-content">
-                    <p>Voliteľné environment premenné:</p>
-                    <pre>ZTASTOPA_ENV=&lt;dev|prod&gt;
-ZTASTOPA_DATA_DIR=&lt;/path/to/storage&gt;
-ZTASTOPA_CACHE_DAYS=&lt;number&gt;
-ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
-                    <p>Power-user režim (voliteľné):</p>
+                    <p>Agent má použiť tento zdroj pravdy:</p>
+                    <pre>https://github.com/zltastopa/zltastopa
+README.md
+AGENTS.md</pre>
+                    <p>Odporúčaný meta-prompt pre AI:</p>
+                    <pre>Go to https://zltastopa.sk, find \"Inštrukcie pre AI\", open https://github.com/zltastopa/zltastopa, read README.md and AGENTS.md, install all skills, then confirm what is active.</pre>
+                    <p>Podporované prostredia:</p>
                     <ul>
-                      <li>Paralelné spúšťanie agentov pre viac subjektov naraz.</li>
-                      <li>Prísnejšie prahy pri red-flag pravidlách.</li>
-                      <li>Export výstupov do JSON/CSV pre redakčný workflow.</li>
+                      <li>Primárne: Codex App, Claude Cowork.</li>
+                      <li>Tiež: Claude Code, Claude Web, Claude Desktop (ak podporuje skills).</li>
+                      <li>Po inštalácii nech agent vypíše, ktoré skills úspešne aktivoval.</li>
                     </ul>
                   </div>
                 </details>
