@@ -769,39 +769,70 @@
       margin-top: 1.15rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.72rem;
       align-items: flex-end;
       justify-content: flex-start;
     }
 
     .orb {
+      width: 126px;
+      height: 126px;
       border-radius: 50%;
       background: var(--yellow);
       display: grid;
       place-items: center;
       text-align: center;
-      font-weight: 900;
+      font-weight: 850;
       letter-spacing: -0.02em;
       line-height: 1.02;
-      padding: 0.35rem;
+      padding: 0.5rem;
+      overflow: hidden;
     }
 
-    .orb.m {
-      width: 126px;
-      height: 126px;
-      font-size: 1rem;
+    .orb img {
+      max-width: 78%;
+      max-height: 78%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
     }
 
-    .orb.s {
-      width: 96px;
-      height: 96px;
-      font-size: 0.82rem;
+    .orb .orb-label {
+      font-size: 0.92rem;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .orb.xl {
+      width: 184px;
+      height: 184px;
     }
 
     .orb.l {
       width: 154px;
       height: 154px;
-      font-size: 1.08rem;
+    }
+
+    .orb.m {
+      width: 126px;
+      height: 126px;
+    }
+
+    .orb.s {
+      width: 98px;
+      height: 98px;
+    }
+
+    .orb.xs {
+      width: 78px;
+      height: 78px;
+      padding: 0.42rem;
+    }
+
+    .orb.ruz img {
+      max-width: 62%;
+      max-height: 62%;
     }
 
     .integrations-note {
@@ -980,6 +1011,16 @@
         justify-content: center;
       }
 
+      .orb.xl {
+        width: 142px;
+        height: 142px;
+      }
+
+      .orb.l {
+        width: 126px;
+        height: 126px;
+      }
+
       .orb.m {
         width: 106px;
         height: 106px;
@@ -990,9 +1031,9 @@
         height: 82px;
       }
 
-      .orb.l {
-        width: 126px;
-        height: 126px;
+      .orb.xs {
+        width: 66px;
+        height: 66px;
       }
 
       .step-card::before {
@@ -1295,16 +1336,17 @@ AGENTS.md</pre>
 
         <article class="info-block" id="integrations">
           <h2>Integrácie</h2>
-          <p class="section-intro">6 zdrojov už beží. Ďalšie napojenia doplníme bez prepisu platformy.</p>
+          <p class="section-intro">7 zdrojov už beží. Ďalšie napojenia doplníme bez prepisu platformy.</p>
           <div class="integration-orbs" aria-label="Integrácie">
-            <span class="orb l">CRZ</span>
-            <span class="orb m">RUZ</span>
-            <span class="orb s">FOAF</span>
-            <span class="orb m">VSZP</span>
-            <span class="orb l">Sociálna<br />poisťovňa</span>
-            <span class="orb m">Finančná<br />správa</span>
+            <span class="orb xl" title="CRZ"><img src="crz.png" alt="CRZ logo" loading="lazy" /></span>
+            <span class="orb xs ruz" title="RUZ"><img src="ruz.png" alt="RUZ logo" loading="lazy" /></span>
+            <span class="orb s" title="FOAF"><img src="foaf.png" alt="FOAF logo" loading="lazy" /></span>
+            <span class="orb s" title="VSZP"><span class="orb-label">VSZP</span></span>
+            <span class="orb m" title="Sociálna poisťovňa"><img src="soc.png" alt="Sociálna poisťovňa logo" loading="lazy" /></span>
+            <span class="orb m" title="Finančná správa"><img src="financnasprava.png" alt="Finančná správa logo" loading="lazy" /></span>
+            <span class="orb l" title="FinStat"><img src="finstat.png" alt="FinStat logo" loading="lazy" /></span>
           </div>
-          <p class="integrations-note">Ak chceš, pošli logá a spravíme ďalší pass s branded orb verziou pre každý zdroj.</p>
+          <p class="integrations-note">Integrácie sú modulárne, nové zdroje vieme doplniť bez zásahu do existujúcich skillov.</p>
         </article>
       </div>
     </section>
