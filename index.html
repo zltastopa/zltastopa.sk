@@ -365,29 +365,29 @@
       z-index: 0;
     }
 
-    .step-card:nth-child(2)::after,
-    .step-card:nth-child(3)::after {
+    .step-card::after {
       content: "";
       position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 56px;
+      top: 22px;
       border-radius: 50%;
       background: var(--yellow);
       z-index: 0;
       pointer-events: none;
     }
 
+    .step-card:nth-child(1)::after {
+      box-shadow: none;
+    }
+
     .step-card:nth-child(2)::after {
-      width: 24px;
-      height: 24px;
-      right: 52px;
-      top: 22px;
+      box-shadow: -24px -14px 0 0 var(--yellow);
     }
 
     .step-card:nth-child(3)::after {
-      width: 22px;
-      height: 22px;
-      right: 54px;
-      top: 20px;
-      box-shadow: -30px -18px 0 0 var(--yellow), -52px -31px 0 -4px var(--yellow);
+      box-shadow: -24px -14px 0 0 var(--yellow), -46px -26px 0 0 var(--yellow);
     }
 
     .step-head,
@@ -1083,19 +1083,19 @@
         top: -86px;
       }
 
+      .step-card::after {
+        width: 16px;
+        height: 16px;
+        right: 42px;
+        top: 16px;
+      }
+
       .step-card:nth-child(2)::after {
-        width: 20px;
-        height: 20px;
-        right: 44px;
-        top: 18px;
+        box-shadow: -18px -11px 0 0 var(--yellow);
       }
 
       .step-card:nth-child(3)::after {
-        width: 18px;
-        height: 18px;
-        right: 46px;
-        top: 16px;
-        box-shadow: -24px -14px 0 0 var(--yellow), -42px -26px 0 -3px var(--yellow);
+        box-shadow: -18px -11px 0 0 var(--yellow), -34px -21px 0 0 var(--yellow);
       }
 
       .bubble.hero-a {
