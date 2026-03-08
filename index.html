@@ -545,109 +545,184 @@
     }
 
     .section {
-      padding: 2.6rem 0;
+      padding: 1.9rem 0;
       position: relative;
       scroll-margin-top: calc(var(--header-h) + 14px);
     }
 
-    .section h2 {
+    .info-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .info-block {
+      border: 2px solid var(--black);
+      border-radius: 28px;
+      background: var(--white);
+      padding: 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-block::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--yellow);
+      right: -112px;
+      top: -110px;
+      z-index: 0;
+    }
+
+    .info-block > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-block h2 {
       margin: 0;
-      font-size: clamp(1.7rem, 4.1vw, 3.1rem);
-      line-height: 0.98;
+      font-size: clamp(1.65rem, 3.8vw, 2.85rem);
+      line-height: 0.96;
       letter-spacing: -0.035em;
     }
 
     .section-intro {
-      margin: 0.9rem 0 0;
+      margin: 0.7rem 0 0;
       font-size: 1rem;
-      max-width: 66ch;
-      font-weight: 600;
-      line-height: 1.4;
+      max-width: 64ch;
+      font-weight: 650;
+      line-height: 1.36;
     }
 
-    .trust-list {
-      margin: 1.1rem 0 0;
-      padding: 0;
-      list-style: none;
+    .what-grid {
+      margin-top: 0.9rem;
       display: grid;
-      gap: 0.65rem;
-      max-width: 82ch;
+      gap: 0.7rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .trust-list li {
+    .what-card {
       border: 2px solid var(--black);
-      border-radius: 14px;
-      padding: 0.74rem 0.85rem;
-      font-weight: 700;
-      line-height: 1.33;
+      border-radius: 16px;
       background: var(--white);
+      padding: 0.78rem 0.82rem;
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.35rem;
+    }
+
+    .what-title {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.015em;
+    }
+
+    .what-sub {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.3;
+      font-weight: 650;
     }
 
     .disclaimer {
-      margin-top: 0.9rem;
+      margin-top: 0.8rem;
       font-size: 0.9rem;
       font-weight: 650;
       border-left: 3px solid var(--black);
       padding-left: 0.7rem;
-      max-width: 66ch;
       line-height: 1.4;
     }
 
-    .method-card {
-      max-width: 86ch;
+    .flag-legend {
+      margin: 0.7rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 800;
     }
 
-    .method-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.52rem;
-      font-size: 0.9rem;
-    }
-
-    .method-table th,
-    .method-table td {
+    .flag-pill {
+      border-radius: 999px;
       border: 2px solid var(--black);
-      text-align: left;
-      vertical-align: top;
-      padding: 0.48rem 0.52rem;
-      line-height: 1.3;
+      padding: 0.28rem 0.55rem;
+      background: var(--white);
     }
 
-    .method-table th {
-      background: var(--yellow);
-      font-weight: 900;
+    .flags-list {
+      margin: 0.8rem 0 0;
+      padding-left: 1.25rem;
+      columns: 2;
+      column-gap: 1.5rem;
+      font-size: 0.92rem;
+      line-height: 1.32;
+      font-weight: 650;
+    }
+
+    .flags-list li {
+      break-inside: avoid;
+      margin-bottom: 0.42rem;
     }
 
     .download-link {
       display: inline-block;
-      margin-top: 0.72rem;
+      margin-top: 0.8rem;
       font-weight: 800;
       text-decoration: underline;
       text-decoration-thickness: 2px;
     }
 
-    .badges {
-      margin-top: 1rem;
+    .integration-orbs {
+      margin-top: 0.9rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.55rem;
+      gap: 0.75rem;
+      align-items: flex-end;
+      justify-content: flex-start;
     }
 
-    .badge {
-      border: 2px solid var(--black);
-      border-radius: 999px;
-      padding: 0.4rem 0.72rem;
-      font-size: 0.84rem;
-      font-weight: 800;
-      background: var(--white);
+    .orb {
+      border-radius: 50%;
+      background: var(--yellow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+      padding: 0.35rem;
+    }
+
+    .orb.m {
+      width: 126px;
+      height: 126px;
+      font-size: 1rem;
+    }
+
+    .orb.s {
+      width: 96px;
+      height: 96px;
+      font-size: 0.82rem;
+    }
+
+    .orb.l {
+      width: 154px;
+      height: 154px;
+      font-size: 1.08rem;
     }
 
     .integrations-note {
-      margin-top: 0.95rem;
+      margin-top: 0.85rem;
       max-width: 66ch;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 650;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .site-footer {
@@ -721,6 +796,14 @@
         right: 10%;
         top: -16%;
       }
+
+      .what-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flags-list {
+        columns: 1;
+      }
     }
 
     @media (max-width: 760px) {
@@ -788,6 +871,33 @@
 
       .runner-tiles {
         grid-template-columns: 1fr;
+      }
+
+      .info-block {
+        padding: 0.92rem;
+      }
+
+      .what-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .integration-orbs {
+        justify-content: center;
+      }
+
+      .orb.m {
+        width: 106px;
+        height: 106px;
+      }
+
+      .orb.s {
+        width: 82px;
+        height: 82px;
+      }
+
+      .orb.l {
+        width: 126px;
+        height: 126px;
       }
 
       .step-card::before {
@@ -983,72 +1093,96 @@ ZTASTOPA_API_KEY=&lt;optional&gt;</pre>
     </section>
 
     <section class="section" id="docs">
-      <div class="container">
-        <h2>Čo získaš hneď</h2>
-        <p class="section-intro">Rýchly prehľad rizík bez toho, aby si ručne preklikával stovky dokumentov.</p>
-        <ul class="trust-list">
-          <li>CRZ je čistené a aktualizované každý deň.</li>
-          <li>31 red-flag pravidiel (info / warning / danger).</li>
-          <li>Zdroje: CRZ, RUZ, Finančná správa (spoľahlivosť), VSZP dlžníci, Sociálna poisťovňa dlžníci + LLM extrakcia.</li>
-        </ul>
-        <p class="disclaimer">Výstupy sú stopy, nie verdikty. Vždy over zdroje.</p>
-      </div>
-    </section>
-
-    <section class="section" id="methodology">
-      <div class="container method-card">
-        <details>
-          <summary>
-            <span>Metodika red-flag</span>
-            <span class="summary-icon" aria-hidden="true">+</span>
-          </summary>
-          <div class="details-content">
-            <p>Závažnosť je rozdelená na tri úrovne: <strong>Info</strong> (slabý signál), <strong>Warning</strong> (významné riziko), <strong>Danger</strong> (vysoká priorita na manuálne overenie).</p>
-            <table class="method-table">
-              <thead>
-                <tr>
-                  <th>Pravidlo</th>
-                  <th>Úroveň</th>
-                  <th>Prečo to riešiť</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Opakované dodatky tesne pred termínom</td>
-                  <td>Warning</td>
-                  <td>Môže signalizovať netransparentnú zmenu rozsahu alebo ceny.</td>
-                </tr>
-                <tr>
-                  <td>Dodávateľ na zozname dlžníkov</td>
-                  <td>Danger</td>
-                  <td>Finančný stres partnera zvyšuje riziko zlyhania dodávky.</td>
-                </tr>
-                <tr>
-                  <td>Neobvyklé personálne prepojenie vo FOAF grafe</td>
-                  <td>Info</td>
-                  <td>Možný konflikt záujmov, treba doplniť širší kontext.</td>
-                </tr>
-              </tbody>
-            </table>
-            <a class="download-link" href="#" role="button">Stiahnuť plné pravidlá (JSON/CSV)</a>
+      <div class="container info-stack">
+        <article class="info-block">
+          <h2>Čo získaš</h2>
+          <p class="section-intro">Čisté dáta, tvrdé signály, okamžitý prehľad.</p>
+          <div class="what-grid">
+            <article class="what-card">
+              <p class="what-title">CRZ upratané pre AI</p>
+              <p class="what-sub">Zmluvy sú vyčistené, normalizované a pripravené na analýzu.</p>
+            </article>
+            <article class="what-card">
+              <p class="what-title">31 red flagov na autopilote</p>
+              <p class="what-sub">Toolkit automaticky kontroluje rizikové vzory bez ručnej driny.</p>
+            </article>
+            <article class="what-card">
+              <p class="what-title">6 zdrojov v jednom grafe</p>
+              <p class="what-sub">CRZ, RUZ, FOAF, VSZP, Sociálna poisťovňa, Finančná správa.</p>
+            </article>
+            <article class="what-card">
+              <p class="what-title">Nekonečne rozšíriteľné</p>
+              <p class="what-sub">Nové konektory pridáš modulárne, bez prepisu celého systému.</p>
+            </article>
           </div>
-        </details>
-      </div>
-    </section>
+          <p class="disclaimer">Výstupy sú stopy, nie verdikty. Vždy over zdroje.</p>
+        </article>
 
-    <section class="section" id="integrations">
-      <div class="container">
-        <h2>Integrácie</h2>
-        <div class="badges" aria-label="Integrácie">
-          <span class="badge">CRZ</span>
-          <span class="badge">RUZ</span>
-          <span class="badge">FinStat</span>
-          <span class="badge">FOAF</span>
-          <span class="badge">VSZP</span>
-          <span class="badge">Sociálna poisťovňa</span>
-          <span class="badge">Finančná správa</span>
-        </div>
-        <p class="integrations-note">Toolkit je modulárny, ďalšie konektory vieme doplniť podľa potreby.</p>
+        <article class="info-block" id="methodology">
+          <h2>Metodika: 31 red flagov</h2>
+          <p class="section-intro">Každý flag má jasnú váhu. Po rozbalení vidíš všetky kontrolované signály.</p>
+          <details>
+            <summary>
+              <span>Zobraziť všetkých 31 red flagov</span>
+              <span class="summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="details-content">
+              <div class="flag-legend">
+                <span class="flag-pill">Info</span>
+                <span class="flag-pill">Warning</span>
+                <span class="flag-pill">Danger</span>
+              </div>
+              <ol class="flags-list">
+                <li>Dodatok tesne pred termínom</li>
+                <li>Opakované dodatky na tú istú položku</li>
+                <li>Výrazný nárast ceny bez vysvetlenia</li>
+                <li>Rozpor medzi textom a prílohami</li>
+                <li>Chýbajúca príloha zmluvy</li>
+                <li>Chýbajúce IČO alebo DIČ partnera</li>
+                <li>Zmluva bez dátumu účinnosti</li>
+                <li>Duplicita zmluvy v CRZ</li>
+                <li>Dodávateľ na zozname dlžníkov VSZP</li>
+                <li>Dodávateľ na zozname dlžníkov SP</li>
+                <li>Nízka daňová spoľahlivosť subjektu</li>
+                <li>Firma krátko po založení</li>
+                <li>Firma bez účtovnej histórie</li>
+                <li>Náhly skok v tržbách</li>
+                <li>Prepojenie osôb medzi objednávateľom a dodávateľom</li>
+                <li>Zdieľaná adresa viacerých rizikových firiem</li>
+                <li>Časté zmeny konateľov</li>
+                <li>Neštandardne krátka lehota plnenia</li>
+                <li>Neštandardne dlhá lehota plnenia</li>
+                <li>Zmluva tesne pod limitom verejného obstarávania</li>
+                <li>Neprimerane široký predmet plnenia</li>
+                <li>Chýbajúce sankcie za neplnenie</li>
+                <li>Nejasná metrika úspechu plnenia</li>
+                <li>Podozrivý počet dodatkov po účinnosti</li>
+                <li>Riziková jurisdikcia vlastníka</li>
+                <li>Reťazenie subdodávateľov bez transparentnosti</li>
+                <li>Opakovaný víťaz u rovnakého obstarávateľa</li>
+                <li>Konflikt údajov medzi CRZ a RUZ</li>
+                <li>Neúplné kontaktné údaje</li>
+                <li>Chýbajúci podpis alebo identifikácia podpisu</li>
+                <li>Vysoká hodnota pri nízkom objeme výstupu</li>
+              </ol>
+              <a class="download-link" href="#" role="button">Stiahnuť plné pravidlá (JSON/CSV)</a>
+            </div>
+          </details>
+        </article>
+
+        <article class="info-block" id="integrations">
+          <h2>Integrácie</h2>
+          <p class="section-intro">6 zdrojov už beží. Ďalšie napojenia doplníme bez prepisu platformy.</p>
+          <div class="integration-orbs" aria-label="Integrácie">
+            <span class="orb l">CRZ</span>
+            <span class="orb m">RUZ</span>
+            <span class="orb s">FOAF</span>
+            <span class="orb m">VSZP</span>
+            <span class="orb l">Sociálna<br />poisťovňa</span>
+            <span class="orb m">Finančná<br />správa</span>
+          </div>
+          <p class="integrations-note">Ak chceš, pošli logá a spravíme ďalší pass s branded orb verziou pre každý zdroj.</p>
+        </article>
       </div>
     </section>
   </main>
