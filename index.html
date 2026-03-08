@@ -439,6 +439,33 @@
       font-weight: 550;
     }
 
+    .step-tasks {
+      margin: 0.72rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      font-weight: 650;
+    }
+
+    .step-tasks li {
+      padding-left: 0.72rem;
+      position: relative;
+    }
+
+    .step-tasks li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.48em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+
     .runner-tiles {
       margin-top: 1rem;
       display: grid;
@@ -1248,7 +1275,12 @@ AGENTS.md</pre>
               </div>
               <div class="step-body">
                 <h3 class="step-title" id="step3-title">Polož otázku. Spoj súvislosti.</h3>
-                <p class="step-copy">Spýtaj sa na zmluvu, faktúru alebo firmu. Agenti sa rozbehnú paralelne, prepoja signály naprieč zdrojmi a vrátia ti jasné stopy na overenie.</p>
+                <p class="step-copy">Napíš jednu vetu. Agenti rozbehnú paralelné preverenie a vrátia jasné stopy.</p>
+                <ul class="step-tasks">
+                  <li>Skontroluj faktúry z 12.03.2024 a označ red flagy.</li>
+                  <li>Nájdi faktúru ID 46581 a všetko podpísané tou istou osobou.</li>
+                  <li>Over dodávateľa voči VSZP/SP dlžníkom a vypíš riziká.</li>
+                </ul>
               </div>
             </article>
           </div>
