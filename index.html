@@ -279,7 +279,8 @@
       transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
     }
 
-    .btn-primary {
+    .btn-primary,
+    .btn-primary:visited {
       border: none;
       background: var(--black);
       color: var(--white);
@@ -800,15 +801,6 @@
       background: var(--white);
     }
 
-    .flags-list {
-      margin: 0.8rem 0 0;
-      padding-left: 1.25rem;
-      columns: 2;
-      column-gap: 1.5rem;
-      font-size: 0.92rem;
-      line-height: 1.32;
-      font-weight: 650;
-    }
 
     .flags-list li {
       break-inside: avoid;
@@ -821,6 +813,82 @@
       font-weight: 800;
       text-decoration: underline;
       text-decoration-thickness: 2px;
+    }
+
+    .flag-pill--danger {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .flag-pill--warning {
+      background: var(--yellow);
+      border-color: var(--black);
+    }
+
+    .flag-pill--info {
+      background: var(--white);
+      border-color: var(--black);
+    }
+
+    .severity-cards {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .severity-card {
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      box-shadow: inset 0 0 0 1px var(--edge-soft);
+    }
+
+    .severity-card--danger { background: #000; color: #fff; }
+    .severity-card--warning { background: var(--yellow); }
+    .severity-card--info { background: rgb(0 0 0 / 0.04); }
+
+    .severity-card-head {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .severity-card-head .count {
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    .flag-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .flag-tags li {
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.15;
+      padding: 0.3rem 0.55rem;
+      border-radius: 8px;
+    }
+
+    .severity-card--danger .flag-tags li {
+      background: rgb(255 255 255 / 0.13);
+    }
+
+    .severity-card--warning .flag-tags li {
+      background: rgb(0 0 0 / 0.08);
+    }
+
+    .severity-card--info .flag-tags li {
+      background: rgb(0 0 0 / 0.06);
     }
 
     .integration-orbs {
@@ -985,9 +1053,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .flags-list {
-        columns: 1;
-      }
     }
 
     @media (max-width: 760px) {
@@ -1358,55 +1423,67 @@ AGENTS.md</pre>
         </article>
 
         <article class="info-block" id="methodology">
-          <h2>Metodika: 31 red flagov</h2>
-          <p class="section-intro">Každý flag má jasnú váhu. Po rozbalení vidíš všetky kontrolované signály.</p>
-          <details>
-            <summary>
-              <span>Zobraziť všetkých 31 red flagov</span>
-              <span class="summary-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="details-content">
-              <div class="flag-legend">
-                <span class="flag-pill">Info</span>
-                <span class="flag-pill">Warning</span>
-                <span class="flag-pill">Danger</span>
-              </div>
-              <ol class="flags-list">
-                <li>Dodatok tesne pred termínom</li>
-                <li>Opakované dodatky na tú istú položku</li>
-                <li>Výrazný nárast ceny bez vysvetlenia</li>
-                <li>Rozpor medzi textom a prílohami</li>
-                <li>Chýbajúca príloha zmluvy</li>
-                <li>Chýbajúce IČO alebo DIČ partnera</li>
-                <li>Zmluva bez dátumu účinnosti</li>
-                <li>Duplicita zmluvy v CRZ</li>
-                <li>Dodávateľ na zozname dlžníkov VSZP</li>
-                <li>Dodávateľ na zozname dlžníkov SP</li>
-                <li>Nízka daňová spoľahlivosť subjektu</li>
-                <li>Firma krátko po založení</li>
-                <li>Firma bez účtovnej histórie</li>
-                <li>Náhly skok v tržbách</li>
-                <li>Prepojenie osôb medzi objednávateľom a dodávateľom</li>
-                <li>Zdieľaná adresa viacerých rizikových firiem</li>
-                <li>Časté zmeny konateľov</li>
-                <li>Neštandardne krátka lehota plnenia</li>
-                <li>Neštandardne dlhá lehota plnenia</li>
-                <li>Zmluva tesne pod limitom verejného obstarávania</li>
-                <li>Neprimerane široký predmet plnenia</li>
-                <li>Chýbajúce sankcie za neplnenie</li>
-                <li>Nejasná metrika úspechu plnenia</li>
-                <li>Podozrivý počet dodatkov po účinnosti</li>
-                <li>Riziková jurisdikcia vlastníka</li>
-                <li>Reťazenie subdodávateľov bez transparentnosti</li>
-                <li>Opakovaný víťaz u rovnakého obstarávateľa</li>
-                <li>Konflikt údajov medzi CRZ a RUZ</li>
-                <li>Neúplné kontaktné údaje</li>
-                <li>Chýbajúci podpis alebo identifikácia podpisu</li>
-                <li>Vysoká hodnota pri nízkom objeme výstupu</li>
-              </ol>
-              <a class="download-link" href="#" role="button">Stiahnuť plné pravidlá (JSON/CSV)</a>
+          <h2>Metodika: 36 red flagov</h2>
+          <p class="section-intro">Každá zmluva prechádza 36 automatickými kontrolami proti 8 verejným zdrojom. Flagy sú rozdelené do troch úrovní závažnosti.</p>
+          <div class="flag-legend">
+            <span class="flag-pill flag-pill--danger">Danger — vážne riziko</span>
+            <span class="flag-pill flag-pill--warning">Warning — podozrivý vzor</span>
+            <span class="flag-pill flag-pill--info">Info — na pozornosť</span>
+          </div>
+          <div class="severity-cards">
+            <div class="severity-card severity-card--danger">
+              <div class="severity-card-head">Danger <span class="count">12</span></div>
+              <ul class="flag-tags">
+                <li>Pokuty zvýhodňujú dodávateľa</li>
+                <li>Daňovo nespoľahlivý dodávateľ</li>
+                <li>Nespoľahlivý subjekt skrytý v zmluve</li>
+                <li>Dlžník VSZP</li>
+                <li>Dlžník Soc. poisťovne</li>
+                <li>Skrytá entita — dlžník VSZP</li>
+                <li>Zrušená firma</li>
+                <li>Nová mikro firma, veľká zmluva</li>
+                <li>Daňový dlžník FS</li>
+                <li>Vymazaný z DPH registra</li>
+                <li>Dôvody na zrušenie DPH</li>
+                <li>Záporné vlastné imanie</li>
+              </ul>
             </div>
-          </details>
+            <div class="severity-card severity-card--warning">
+              <div class="severity-card-head">Warning <span class="count">17</span></div>
+              <ul class="flag-tags">
+                <li>Skryté entity</li>
+                <li>Skrytá cena</li>
+                <li>Bezodplatná zmluva</li>
+                <li>Mikro dodávateľ, veľká zmluva</li>
+                <li>Čerstvo založená firma</li>
+                <li>Chýbajúca príloha</li>
+                <li>Navýšenie ceny dodatkami</li>
+                <li>Delenie zákazky</li>
+                <li>Zmluvy v rýchlom slede</li>
+                <li>Neziskovka, veľká zmluva</li>
+                <li>Nesúlad odvetvia (NACE)</li>
+                <li>Zdieľaný podpisujúci</li>
+                <li>Skrytá entita = dodávateľ</li>
+                <li>Neobvykle vysoká suma</li>
+                <li>Spiaca firma</li>
+                <li>Subdodávky ≥ 80 %</li>
+                <li>Tesne pod limitom EÚ súťaže</li>
+              </ul>
+            </div>
+            <div class="severity-card severity-card--info">
+              <div class="severity-card-head">Info <span class="count">7</span></div>
+              <ul class="flag-tags">
+                <li>Neuvedená platnosť</li>
+                <li>Bez IČO</li>
+                <li>Nie je v RUZ</li>
+                <li>Podpis cez víkend</li>
+                <li>Monopolný dodávateľ</li>
+                <li>Zahraničný dodávateľ</li>
+                <li>Nadmerný počet pokút</li>
+              </ul>
+            </div>
+          </div>
+          <a class="download-link" href="https://github.com/zltastopa/zmluvy" target="_blank" rel="noreferrer noopener">Pozri zdrojový kód na GitHube</a>
         </article>
 
         <article class="info-block" id="integrations">
