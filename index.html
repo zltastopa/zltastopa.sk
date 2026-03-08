@@ -10,10 +10,10 @@
     :root {
       --black: #000000;
       --white: #ffffff;
-      --yellow: #f2c63d;
+      --yellow: #FFC400;
       --card-radius: 26px;
-      --max: 1320px;
-      --header-h: 70px;
+      --max: 1360px;
+      --header-h: 102px;
     }
 
     * {
@@ -31,6 +31,7 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
 
     a,
@@ -52,48 +53,109 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 80;
-      background: var(--white);
-      border-bottom: 1px solid var(--black);
+      z-index: 140;
+      background: transparent;
+      padding: 0.55rem 0 0.25rem;
       min-height: var(--header-h);
     }
 
     .header-inner {
-      min-height: var(--header-h);
+      min-height: calc(var(--header-h) - 24px);
       display: flex;
       align-items: center;
+      justify-content: center;
+    }
+
+    .menu-pill {
+      width: min(980px, 100%);
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      background: var(--white);
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.38rem 0.62rem 0.38rem 0.72rem;
+      box-shadow: 0 0 0 1px var(--white);
+    }
+
+    .menu-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .menu-brand img {
+      width: 170px;
+      height: auto;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      object-fit: contain;
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    .menu-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
       justify-content: flex-end;
     }
 
-    .top-nav {
+    .menu-link,
+    .menu-cta {
       display: inline-flex;
-      gap: 1.25rem;
       align-items: center;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .top-nav a {
+      justify-content: center;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 0.15rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 0.58rem 0.98rem;
+      letter-spacing: -0.01em;
+      transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+      white-space: nowrap;
     }
 
-    .top-nav a:hover {
-      border-color: var(--black);
+    .menu-link {
+      background: var(--white);
+    }
+
+    .menu-link:hover {
+      background: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+    .menu-cta {
+      border: none;
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .menu-cta:hover {
+      transform: translateY(-1px);
+      background: var(--black);
+      color: var(--white);
     }
 
     .above-fold {
       position: relative;
-      overflow: clip;
-      padding: 0.75rem 0 1.25rem;
+      overflow: visible;
       min-height: calc(100svh - var(--header-h));
+      padding: 0 0 1rem;
     }
 
     .stage-deco {
       position: absolute;
-      inset: 0;
+      top: calc(-1 * var(--header-h));
+      left: 0;
+      right: 0;
+      bottom: 0;
       pointer-events: none;
       z-index: 0;
     }
@@ -105,31 +167,31 @@
     }
 
     .bubble.hero-a {
-      width: min(56vw, 760px);
-      height: min(56vw, 760px);
-      right: -14%;
-      top: 16%;
+      width: min(66vw, 1080px);
+      height: min(66vw, 1080px);
+      right: -18%;
+      top: -58%;
     }
 
     .bubble.hero-b {
-      width: min(38vw, 500px);
-      height: min(38vw, 500px);
-      right: 21%;
-      top: 36%;
+      width: min(42vw, 680px);
+      height: min(42vw, 680px);
+      right: 32%;
+      top: -20%;
     }
 
     .bubble.hero-c {
-      width: min(12vw, 150px);
-      height: min(12vw, 150px);
-      right: 14%;
-      top: 8%;
+      width: min(13vw, 180px);
+      height: min(13vw, 180px);
+      left: -4%;
+      top: -19%;
     }
 
     .bubble.hero-d {
-      width: min(14vw, 180px);
-      height: min(14vw, 180px);
-      left: -4%;
-      top: 36%;
+      width: min(10vw, 150px);
+      height: min(10vw, 150px);
+      right: 19%;
+      top: -5%;
     }
 
     .trail {
@@ -144,62 +206,45 @@
       display: block;
     }
 
-    .trail i:nth-child(1) { width: 16px; height: 16px; right: 43%; top: 22%; }
-    .trail i:nth-child(2) { width: 14px; height: 14px; right: 40%; top: 20%; }
-    .trail i:nth-child(3) { width: 13px; height: 13px; right: 37%; top: 18%; }
-    .trail i:nth-child(4) { width: 12px; height: 12px; right: 34%; top: 16%; }
-    .trail i:nth-child(5) { width: 11px; height: 11px; right: 31%; top: 14%; }
-    .trail i:nth-child(6) { width: 10px; height: 10px; right: 28%; top: 12.5%; }
-    .trail i:nth-child(7) { width: 9px; height: 9px; right: 25%; top: 11%; }
-    .trail i:nth-child(8) { width: 8px; height: 8px; right: 22%; top: 10%; }
-
-    .logo-stage {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      margin: clamp(0.75rem, 2.2vw, 1.25rem) 0 0.5rem;
-    }
-
-    .logo-stage img {
-      width: clamp(300px, 46vw, 740px);
-      max-width: 100%;
-      height: auto;
-      display: block;
-      filter: contrast(1.04);
-    }
+    .trail i:nth-child(1) { width: 16px; height: 16px; right: 36%; top: 5%; }
+    .trail i:nth-child(2) { width: 14px; height: 14px; right: 33.6%; top: 4.6%; }
+    .trail i:nth-child(3) { width: 12px; height: 12px; right: 31.1%; top: 4.3%; }
+    .trail i:nth-child(4) { width: 11px; height: 11px; right: 28.7%; top: 4.2%; }
+    .trail i:nth-child(5) { width: 10px; height: 10px; right: 26.2%; top: 4.3%; }
 
     .hero-copy {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 980px;
       margin-inline: auto;
       text-align: center;
-      padding: 0.2rem 0 0.4rem;
+      padding: 0.12rem 0 0.1rem;
     }
 
     .hero-copy h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 7vw, 6rem);
-      line-height: 0.92;
-      letter-spacing: -0.045em;
+      font-size: clamp(2.4rem, 6.6vw, 5.6rem);
+      line-height: 0.91;
+      letter-spacing: -0.048em;
+      text-wrap: balance;
     }
 
     .hero-copy p {
-      margin: 1rem auto 0;
-      font-size: clamp(1.02rem, 2vw, 1.35rem);
-      line-height: 1.4;
-      max-width: 34ch;
+      margin: 0.66rem auto 0;
+      font-size: clamp(1rem, 2vw, 1.34rem);
+      line-height: 1.38;
+      max-width: 35ch;
       font-weight: 600;
+      text-wrap: pretty;
     }
 
     .hero-actions {
-      margin-top: 1.3rem;
+      margin-top: 0.86rem;
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 0.9rem 1rem;
       align-items: center;
       justify-content: center;
+      gap: 0.85rem 1rem;
     }
 
     .btn {
@@ -220,14 +265,12 @@
       border: none;
       background: var(--yellow);
       color: var(--black);
-      box-shadow: inset 0 0 0 1px var(--yellow);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
       background: var(--black);
       color: var(--white);
-      box-shadow: inset 0 0 0 1px var(--black);
     }
 
     .btn-outline {
@@ -256,8 +299,8 @@
     .steps-wrap {
       position: relative;
       z-index: 3;
-      margin-top: 1.2rem;
-      scroll-margin-top: calc(var(--header-h) + 12px);
+      margin-top: 0.68rem;
+      scroll-margin-top: calc(var(--header-h) + 18px);
     }
 
     .steps-head {
@@ -265,20 +308,22 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.7rem;
     }
 
     .steps-head h2 {
       margin: 0;
-      font-size: clamp(2rem, 5.4vw, 3.9rem);
-      letter-spacing: -0.04em;
-      line-height: 0.95;
+      font-size: clamp(2rem, 5.2vw, 3.85rem);
+      letter-spacing: -0.045em;
+      line-height: 0.93;
+      text-wrap: balance;
     }
 
     .steps-head p {
       margin: 0;
-      font-weight: 700;
-      font-size: 0.92rem;
+      font-weight: 800;
+      font-size: 1.04rem;
+      letter-spacing: -0.015em;
     }
 
     .steps-grid {
@@ -294,17 +339,17 @@
       padding: 1.1rem;
       position: relative;
       overflow: hidden;
-      min-height: 402px;
+      min-height: 342px;
     }
 
     .step-card::before {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       background: var(--yellow);
-      right: -95px;
+      right: -100px;
       top: -98px;
       z-index: 0;
     }
@@ -502,7 +547,7 @@
     .section {
       padding: 2.6rem 0;
       position: relative;
-      scroll-margin-top: calc(var(--header-h) + 10px);
+      scroll-margin-top: calc(var(--header-h) + 14px);
     }
 
     .section h2 {
@@ -638,21 +683,15 @@
       display: none;
     }
 
-    @media (max-width: 1180px) {
-      .step-card {
-        min-height: 390px;
+    @media (max-width: 1140px) {
+      .menu-pill {
+        min-height: 60px;
       }
 
-      .bubble.hero-a {
-        right: -21%;
+      .hero-copy h1 {
+        font-size: clamp(2.2rem, 7vw, 4.8rem);
       }
 
-      .bubble.hero-b {
-        right: 11%;
-      }
-    }
-
-    @media (max-width: 1000px) {
       .steps-grid {
         grid-template-columns: 1fr;
       }
@@ -670,17 +709,17 @@
       }
 
       .bubble.hero-a {
-        width: 82vw;
-        height: 82vw;
-        right: -30%;
-        top: 23%;
+        width: 88vw;
+        height: 88vw;
+        right: -28%;
+        top: -46%;
       }
 
       .bubble.hero-b {
         width: 58vw;
         height: 58vw;
-        right: 8%;
-        top: 44%;
+        right: 10%;
+        top: -16%;
       }
     }
 
@@ -690,32 +729,45 @@
       }
 
       .container {
-        width: min(var(--max), calc(100% - 1.25rem));
+        width: min(var(--max), calc(100% - 1.1rem));
       }
 
       .site-header {
-        min-height: 58px;
+        min-height: 78px;
+        padding-top: 0.4rem;
       }
 
       .header-inner {
-        min-height: 58px;
+        min-height: 68px;
       }
 
-      .top-nav {
-        font-size: 0.84rem;
-        gap: 0.72rem;
+      .menu-pill {
+        min-height: 54px;
+        padding: 0.32rem 0.4rem 0.32rem 0.5rem;
       }
 
-      .logo-stage {
-        margin-top: 0.55rem;
+      .menu-actions {
+        gap: 0.18rem;
+      }
+
+      .menu-brand img {
+        width: 78px;
+        height: auto;
+      }
+
+      .menu-link,
+      .menu-cta {
+        padding: 0.34rem 0.5rem;
+        font-size: 0.72rem;
       }
 
       .hero-copy h1 {
-        font-size: clamp(2rem, 11vw, 3.5rem);
+        font-size: clamp(2rem, 10.3vw, 3.3rem);
       }
 
       .hero-copy p {
-        max-width: 26ch;
+        max-width: 24ch;
+        margin-top: 0.52rem;
       }
 
       .hero-actions {
@@ -731,26 +783,32 @@
       }
 
       .step-card::before {
-        width: 180px;
-        height: 180px;
-        right: -84px;
-        top: -84px;
+        width: 190px;
+        height: 190px;
+        right: -86px;
+        top: -86px;
       }
 
       .bubble.hero-a {
-        width: 96vw;
-        height: 96vw;
-        right: -42%;
+        width: 122vw;
+        height: 122vw;
+        right: -53%;
+        top: -32%;
       }
 
       .bubble.hero-b {
-        width: 68vw;
-        height: 68vw;
-        right: -2%;
+        width: 74vw;
+        height: 74vw;
+        right: 2%;
+        top: -8%;
+      }
+
+      .bubble.hero-c {
+        left: -13%;
       }
 
       .bubble.hero-d {
-        left: -11%;
+        right: 14%;
       }
 
       .mobile-sticky {
@@ -759,7 +817,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 90;
+        z-index: 160;
         border-top: 2px solid var(--black);
         background: var(--white);
         padding: 0.55rem 0.72rem;
@@ -791,35 +849,34 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <nav class="top-nav" aria-label="Hlavná navigácia">
-        <a href="#github">GitHub</a>
-        <a href="#steps">Návod</a>
-        <a href="#methodology">Metodika</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="above-fold" aria-labelledby="hero-title">
-      <div class="stage-deco" aria-hidden="true">
-        <span class="bubble hero-a"></span>
-        <span class="bubble hero-b"></span>
-        <span class="bubble hero-c"></span>
-        <span class="bubble hero-d"></span>
-        <div class="trail">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="logo-stage" id="top">
+      <nav class="menu-pill" aria-label="Hlavná navigácia">
+        <a class="menu-brand" href="#top" aria-label="Žltá Stopa domov">
           <img
             src="zltastopa.png"
             alt="Žltá Stopa"
             onerror="this.onerror=null;this.src='/Users/hraska/Downloads/zltastopa.png';"
           />
+        </a>
+        <div class="menu-actions">
+          <a class="menu-cta" href="#steps">Začni</a>
+          <a class="menu-link" href="#methodology">Metodika</a>
+          <a class="menu-link" href="#github">GitHub</a>
         </div>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="above-fold" aria-labelledby="hero-title" id="top">
+      <div class="stage-deco" aria-hidden="true">
+        <span class="bubble hero-a"></span>
+        <span class="bubble hero-b"></span>
+        <span class="bubble hero-c"></span>
+        <span class="bubble hero-d"></span>
+        <div class="trail"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="container">
         <div class="hero-copy">
           <h1 id="hero-title">Niektoré dokumenty smrdia.</h1>
           <p>Žltá Stopa mení CRZ zmluvy a verejné dokumenty na signály, ktoré vieš hneď prehľadať a poskladať do stopy.</p>
@@ -832,7 +889,7 @@
         <div class="steps-wrap" id="steps">
           <div class="steps-head">
             <h2>Nainštaluj za 60 sekúnd</h2>
-            <p>3 kroky. Bez zbytočností.</p>
+            <p>3 kroky. Žiadne zbytočnosti.</p>
           </div>
 
           <div class="steps-grid">
