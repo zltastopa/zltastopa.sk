@@ -1210,13 +1210,13 @@
               <div class="step-body">
                 <h3 class="step-title" id="step2-title">Skopíruj a vlož pokyn</h3>
                 <div class="code-wrap">
-                  <pre class="install-code" id="installInstruction">Choď na https://zltastopa.sk, otvor sekciu \"Inštrukcie pre AI\", potom otvor https://github.com/zltastopa/zltastopa, prečítaj README.md a AGENTS.md a nainštaluj všetky skills.</pre>
+                  <pre class="install-code" id="installInstruction">Choď na www.zltastopa.sk, nájdi „Inštrukcie pre AI“, použi ich a nainštaluj všetky skills Žltá Stopa.</pre>
                 </div>
                 <div class="code-actions">
                   <button class="btn btn-outline js-copy" type="button" data-copy-target="installInstruction">Kopírovať</button>
                   <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
                 </div>
-                <p class="mini-note">Toto je presný prompt, ktorý má agent vykonať krok po kroku.</p>
+                <p class="mini-note">Vlož tento text do Codex App alebo Claude a spusti ho.</p>
 
                 <details>
                   <summary>
@@ -1224,17 +1224,17 @@
                     <span class="summary-icon" aria-hidden="true"></span>
                   </summary>
                   <div class="details-content">
-                    <p>Agent má použiť tento zdroj pravdy:</p>
+                    <p>Primary source of truth:</p>
                     <pre>https://github.com/zltastopa/zltastopa
 README.md
 AGENTS.md</pre>
-                    <p>Odporúčaný meta-prompt pre AI:</p>
-                    <pre>Go to https://zltastopa.sk, find \"Inštrukcie pre AI\", open https://github.com/zltastopa/zltastopa, read README.md and AGENTS.md, install all skills, then confirm what is active.</pre>
-                    <p>Podporované prostredia:</p>
+                    <p>Recommended instruction for AI agents:</p>
+                    <pre>Visit https://github.com/zltastopa/zltastopa. Read README.md and AGENTS.md. Install all required Žltá Stopa skills for the current runner (Codex App, Claude Cowork, Claude Code, Claude Web, or Claude Desktop if supported). Then list which skills are active and run one quick smoke test query on CRZ data.</pre>
+                    <p>Expected behavior:</p>
                     <ul>
-                      <li>Primárne: Codex App, Claude Cowork.</li>
-                      <li>Tiež: Claude Code, Claude Web, Claude Desktop (ak podporuje skills).</li>
-                      <li>Po inštalácii nech agent vypíše, ktoré skills úspešne aktivoval.</li>
+                      <li>Install everything automatically, without asking for manual file browsing.</li>
+                      <li>Adapt steps to the current runner environment.</li>
+                      <li>Return a clear install summary and active skill list.</li>
                     </ul>
                   </div>
                 </details>
