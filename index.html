@@ -387,6 +387,10 @@
       scroll-margin-top: calc(var(--header-h) + 18px);
     }
 
+    .steps-section .steps-wrap {
+      margin-top: 0;
+    }
+
     .steps-head {
       display: flex;
       align-items: baseline;
@@ -780,6 +784,7 @@
     }
 
     .project-card {
+      --project-accent: var(--yellow);
       border-radius: 24px;
       background: var(--white);
       border: 0;
@@ -800,10 +805,10 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: var(--yellow);
+      background: var(--project-accent);
       right: -90px;
       top: -88px;
-      opacity: 0.55;
+      opacity: 0.38;
       z-index: 0;
     }
 
@@ -831,6 +836,51 @@
       font-weight: 900;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+
+    .project-crz {
+      --project-accent: #4f86e8;
+    }
+
+    .project-compass {
+      --project-accent: #30ad67;
+    }
+
+    .project-toolkit {
+      --project-accent: #ff9d34;
+    }
+
+    .project-badge--crz {
+      background: #eaf2ff;
+      border-color: #356ecf;
+      color: #1e4f9f;
+    }
+
+    .project-badge--compass {
+      background: #eaf8ef;
+      border-color: #249154;
+      color: #186a3b;
+    }
+
+    .project-badge--toolkit {
+      background: #fff4df;
+      border-color: #cf7300;
+      color: #8f4a00;
+    }
+
+    .badge-new {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #1f7f45;
+      background: #36b96d;
+      color: #fff;
+      margin-left: 0.42rem;
+      padding: 0.08rem 0.34rem;
+      font-size: 0.62rem;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      font-weight: 900;
     }
 
     .project-card h3 {
@@ -872,6 +922,16 @@
       font-weight: 900;
     }
 
+    .mini-value-up {
+      color: #1f8f49;
+      font-weight: 900;
+    }
+
+    .mini-risk {
+      color: #bf2121;
+      font-weight: 900;
+    }
+
     .mini-compass {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -879,36 +939,22 @@
       gap: 0.65rem;
     }
 
-    .compass-orb {
+    .compass-logo {
       width: 76px;
       height: 76px;
-      border-radius: 50%;
-      border: 2px solid var(--black);
-      background: var(--white);
+      border-radius: 14px;
+      background: rgb(0 0 0 / 0.03);
       display: grid;
       place-items: center;
-      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.1);
     }
 
-    .compass-orb::before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 28px;
-      background: var(--black);
-      transform: rotate(32deg);
-      transform-origin: bottom center;
-      top: 10px;
-    }
-
-    .compass-orb::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--yellow);
-      border: 1px solid var(--black);
+    .compass-logo img {
+      width: 86%;
+      height: 86%;
+      object-fit: contain;
+      display: block;
     }
 
     .mini-compass-stats {
@@ -924,6 +970,18 @@
       font-size: 0.76rem;
       font-weight: 780;
       line-height: 1.2;
+    }
+
+    .mini-stat-up {
+      color: #197f3e;
+      border-color: #8fd1a7;
+      background: #e7f8ed;
+    }
+
+    .mini-stat-alert {
+      color: #aa1e1e;
+      border-color: #e8a7a7;
+      background: #fdeeee;
     }
 
     .mini-toolkit {
@@ -958,7 +1016,15 @@
       border: 1px solid rgb(255 255 255 / 0.14);
       width: fit-content;
       max-width: 100%;
+      border-left-width: 3px;
+      border-left-style: solid;
+      border-left-color: var(--yellow);
     }
+
+    .mini-log-crz { border-left-color: #4f86e8; }
+    .mini-log-fin { border-left-color: #30ad67; }
+    .mini-log-ske { border-left-color: #f05353; }
+    .mini-log-coo { border-left-color: #ffb74a; }
 
     .project-link {
       display: inline-flex;
@@ -1675,7 +1741,65 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="projects-head">
+          <h2>Projekty Žltá Stopa</h2>
+          <p>Dáta. Kompas. Agenti.</p>
+        </div>
+
+        <div class="projects-grid">
+          <a class="project-card project-crz" href="https://zmluvy.zltastopa.sk" target="_blank" rel="noreferrer noopener">
+            <span class="project-badge project-badge--crz">CRZ Explorer · Live</span>
+            <h3>Presvieť štátne zmluvy</h3>
+            <p>Čistý fulltext, dodatky, prílohy, sumy a podpisy bez PDF chaosu.</p>
+            <div class="project-mini mini-crz" aria-hidden="true">
+              <div class="mini-row"><strong>ID:</strong> 46581 · <strong>Suma:</strong> 1 280 000 €</div>
+              <div class="mini-row"><strong>Podpis:</strong> Ján Príklad · 12.03.2024</div>
+              <div class="mini-row"><strong>Navýšenie:</strong> <span class="mini-value-up">+312 000 € dodatkami</span></div>
+              <div class="mini-row"><strong>Red flag:</strong> <span class="mini-risk">podozrivo rýchla séria dodatkov</span></div>
+            </div>
+            <span class="project-link">Otvoriť CRZ Explorer →</span>
+          </a>
+
+          <a class="project-card project-compass" href="https://kompas.zltastopa.sk" target="_blank" rel="noreferrer noopener">
+            <span class="project-badge project-badge--compass">Majetkový kompas <span class="badge-new">NEW</span></span>
+            <h3>Sleduj pohyb majetku</h3>
+            <p>Rýchly prehľad majetkových priznaní, medziročných zmien a podozrivých skokov.</p>
+            <div class="project-mini mini-compass" aria-hidden="true">
+              <span class="compass-logo">
+                <img src="majetkovy-kompas-logo.png" alt="" loading="lazy" />
+              </span>
+              <div class="mini-compass-stats">
+                <div class="mini-stat mini-stat-up">Ján Príklad · +780 000 € (2025)</div>
+                <div class="mini-stat">+2 nehnuteľnosti · +1 firma</div>
+                <div class="mini-stat mini-stat-alert">Skok oproti 2024: +62 %</div>
+              </div>
+            </div>
+            <span class="project-link">Otvoriť Majetkový kompas →</span>
+          </a>
+
+          <a class="project-card project-toolkit" href="#steps">
+            <span class="project-badge project-badge--toolkit">Agentic Toolkit · Live</span>
+            <h3>Zapni tím AI agentov</h3>
+            <p>Jedna veta spustí paralelné preverenie dát, prepojí stopy a vráti jasný výstup.</p>
+            <div class="project-mini mini-toolkit" aria-hidden="true">
+              <div class="mini-log mini-log-crz">[CRZ] parsing contracts...</div>
+              <div class="mini-log mini-log-fin">[FinStat] scoring suppliers...</div>
+              <div class="mini-log mini-log-ske">[Skeptik] cross-checking debtors...</div>
+              <div class="mini-log mini-log-coo">[Koordinátor] building newsroom brief...</div>
+            </div>
+            <span class="project-link">Nainštalovať toolkit →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps-section">
+      <div class="container">
         <div class="steps-wrap" id="steps">
           <div class="steps-head">
             <h2>Nainštaluj za 60 sekúnd</h2>
@@ -1765,58 +1889,6 @@ AGENTS.md</pre>
               </div>
             </article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section projects-section" id="projects">
-      <div class="container">
-        <div class="projects-head">
-          <h2>Projekty Žltá Stopa</h2>
-          <p>Dáta. Kompas. Agenti.</p>
-        </div>
-
-        <div class="projects-grid">
-          <a class="project-card" href="https://zmluvy.zltastopa.sk" target="_blank" rel="noreferrer noopener">
-            <span class="project-badge">CRZ Explorer · Live</span>
-            <h3>Presvieť štátne zmluvy</h3>
-            <p>Čistý fulltext, dodatky, prílohy, sumy a podpisy bez PDF chaosu.</p>
-            <div class="project-mini mini-crz" aria-hidden="true">
-              <div class="mini-row"><strong>ID:</strong> 46581 · <strong>Suma:</strong> 1 280 000 €</div>
-              <div class="mini-row"><strong>Podpis:</strong> Ján Príklad · 12.03.2024</div>
-              <div class="mini-row"><strong>Red flag:</strong> navýšenie ceny dodatkami</div>
-              <div class="mini-row"><strong>Zdroj:</strong> zmluvy.zltastopa.sk</div>
-            </div>
-            <span class="project-link">Otvoriť CRZ Explorer →</span>
-          </a>
-
-          <a class="project-card" href="https://kompas.zltastopa.sk" target="_blank" rel="noreferrer noopener">
-            <span class="project-badge">Majetkový kompas · New</span>
-            <h3>Sleduj pohyb majetku</h3>
-            <p>Rýchly prehľad majetkových priznaní, medziročných zmien a podozrivých skokov.</p>
-            <div class="project-mini mini-compass" aria-hidden="true">
-              <span class="compass-orb"></span>
-              <div class="mini-compass-stats">
-                <div class="mini-stat">Ján Príklad · +780 000 € (2025)</div>
-                <div class="mini-stat">+2 nehnuteľnosti · +1 firma</div>
-                <div class="mini-stat">Skok oproti 2024: +62 %</div>
-              </div>
-            </div>
-            <span class="project-link">Otvoriť Majetkový kompas →</span>
-          </a>
-
-          <a class="project-card" href="#steps">
-            <span class="project-badge">Agentic Toolkit · Live</span>
-            <h3>Zapni tím AI agentov</h3>
-            <p>Jedna veta spustí paralelné preverenie dát, prepojí stopy a vráti jasný výstup.</p>
-            <div class="project-mini mini-toolkit" aria-hidden="true">
-              <div class="mini-log">[CRZ] parsing contracts...</div>
-              <div class="mini-log">[FinStat] scoring suppliers...</div>
-              <div class="mini-log">[Skeptik] cross-checking debtors...</div>
-              <div class="mini-log">[Koordinátor] building newsroom brief...</div>
-            </div>
-            <span class="project-link">Nainštalovať toolkit →</span>
-          </a>
         </div>
       </div>
     </section>
