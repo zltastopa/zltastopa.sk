@@ -192,11 +192,24 @@
       display: block;
     }
 
-    .above-fold {
+    .with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+    }
+
+    .with-icon .discord-icon {
+      width: 0.96rem;
+      height: 0.96rem;
+      display: block;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+
+    #top {
       position: relative;
       overflow: visible;
-      min-height: calc(100svh - var(--header-h));
-      padding: 0 0 1rem;
+      padding: 0;
     }
 
     .stage-deco {
@@ -274,7 +287,7 @@
       max-width: 980px;
       margin-inline: auto;
       text-align: center;
-      padding: 4rem 0 0.1rem;
+      padding: clamp(1.2rem, 3.8vw, 2.1rem) 0 0.1rem;
     }
 
     .hero-copy h1 {
@@ -314,7 +327,7 @@
       margin-top: 0.9rem;
       display: grid;
       justify-items: center;
-      gap: 0.74rem;
+      gap: 0.82rem;
     }
 
     .hero-actions-row {
@@ -323,6 +336,18 @@
       align-items: center;
       justify-content: center;
       gap: 0.85rem 1rem;
+    }
+
+    .hero-support-link {
+      font-size: 0.95rem;
+      font-weight: 780;
+      text-decoration: none;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 0.16rem;
+    }
+
+    .hero-support-link:hover {
+      background: var(--yellow);
     }
 
     .btn {
@@ -350,11 +375,6 @@
       transform: translateY(-1px);
       background: var(--yellow);
       color: var(--black);
-    }
-
-    .btn-hero-main {
-      font-size: 1.18rem;
-      padding: 1.1rem 2rem;
     }
 
     .btn-outline {
@@ -751,7 +771,7 @@
     }
 
     .projects-section {
-      padding-top: 0.35rem;
+      padding-top: 4rem;
       padding-bottom: 0.9rem;
     }
 
@@ -1711,14 +1731,17 @@
           <a class="menu-icon-link" href="https://github.com/zltastopa/zmluvy" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.35 22.9c.58.1.79-.25.79-.56v-2.03c-3.19.69-3.86-1.36-3.86-1.36-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.17a11.1 11.1 0 0 1 5.79 0c2.2-1.48 3.17-1.17 3.17-1.17.64 1.6.24 2.79.12 3.08.74.8 1.18 1.82 1.18 3.07 0 4.41-2.68 5.37-5.24 5.66.41.35.77 1.03.77 2.08v3.08c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
           </a>
-          <a class="menu-community" href="https://discord.gg/zltastopa" target="_blank" rel="noreferrer noopener">Discord</a>
+          <a class="menu-community with-icon" href="https://discord.gg/zltastopa" target="_blank" rel="noreferrer noopener">
+            <svg class="discord-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.545 2.907A13.227 13.227 0 0 0 10.227 1.9a.051.051 0 0 0-.053.025c-.144.25-.304.577-.416.836a12.19 12.19 0 0 0-3.516 0 8.45 8.45 0 0 0-.422-.836.052.052 0 0 0-.053-.025 13.157 13.157 0 0 0-3.318 1.006.05.05 0 0 0-.024.02C.533 5.754-.034 8.51.244 11.232a.06.06 0 0 0 .023.04 13.361 13.361 0 0 0 4.066 2.045.052.052 0 0 0 .056-.02c.313-.43.592-.885.835-1.365a.051.051 0 0 0-.028-.07 8.645 8.645 0 0 1-1.243-.593.052.052 0 0 1-.005-.086c.084-.062.168-.126.248-.191a.05.05 0 0 1 .052-.007c2.619 1.195 5.456 1.195 8.044 0a.05.05 0 0 1 .053.006c.08.066.164.13.249.192a.052.052 0 0 1-.004.086 8.215 8.215 0 0 1-1.244.592.052.052 0 0 0-.028.07c.248.48.526.936.836 1.365a.052.052 0 0 0 .056.02 13.34 13.34 0 0 0 4.067-2.045.05.05 0 0 0 .022-.04c.334-3.145-.559-5.877-2.181-8.306a.041.041 0 0 0-.024-.02ZM5.683 9.817c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.636 1.612-1.438 1.612Zm4.634 0c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.63 1.612-1.438 1.612Z"/></svg>
+            <span>Discord</span>
+          </a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="above-fold" aria-labelledby="hero-title" id="top">
+    <section aria-labelledby="hero-title" id="top">
       <div class="stage-deco" aria-hidden="true">
         <span class="bubble hero-a"></span>
         <span class="bubble hero-b"></span>
@@ -1734,11 +1757,14 @@
           <p>Žltá Stopa je otvorený hub pre čisté verejné dáta a nástroje, ktoré odhalia súvislosti skôr, než zmiznú v šume.</p>
           <p class="hero-kicker">Tri produkty. Jedna Žltá Stopa.</p>
           <div class="hero-actions-stack">
-            <a class="btn btn-primary btn-hero-main" href="https://zmluvy.zltastopa.sk" target="_blank" rel="noreferrer noopener">Presvieť si štátne zmluvy →</a>
             <div class="hero-actions-row">
-              <button class="btn btn-outline js-copy" type="button" data-copy-target="installInstruction">Skopírovať inštrukciu</button>
-              <a class="hero-link" href="#projects">Pozri projekty →</a>
+              <a class="btn btn-primary" href="https://zmluvy.zltastopa.sk" target="_blank" rel="noreferrer noopener">Otvoriť prečistený CRZ →</a>
+              <a class="btn btn-outline" href="#projects">Pozri projekty →</a>
             </div>
+            <a class="hero-support-link with-icon" href="https://discord.gg/zltastopa" target="_blank" rel="noreferrer noopener">
+              <svg class="discord-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.545 2.907A13.227 13.227 0 0 0 10.227 1.9a.051.051 0 0 0-.053.025c-.144.25-.304.577-.416.836a12.19 12.19 0 0 0-3.516 0 8.45 8.45 0 0 0-.422-.836.052.052 0 0 0-.053-.025 13.157 13.157 0 0 0-3.318 1.006.05.05 0 0 0-.024.02C.533 5.754-.034 8.51.244 11.232a.06.06 0 0 0 .023.04 13.361 13.361 0 0 0 4.066 2.045.052.052 0 0 0 .056-.02c.313-.43.592-.885.835-1.365a.051.051 0 0 0-.028-.07 8.645 8.645 0 0 1-1.243-.593.052.052 0 0 1-.005-.086c.084-.062.168-.126.248-.191a.05.05 0 0 1 .052-.007c2.619 1.195 5.456 1.195 8.044 0a.05.05 0 0 1 .053.006c.08.066.164.13.249.192a.052.052 0 0 1-.004.086 8.215 8.215 0 0 1-1.244.592.052.052 0 0 0-.028.07c.248.48.526.936.836 1.365a.052.052 0 0 0 .056.02 13.34 13.34 0 0 0 4.067-2.045.05.05 0 0 0 .022-.04c.334-3.145-.559-5.877-2.181-8.306a.041.041 0 0 0-.024-.02ZM5.683 9.817c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.636 1.612-1.438 1.612Zm4.634 0c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.63 1.612-1.438 1.612Z"/></svg>
+              <span>Otázky? Pridaj sa na Discord →</span>
+            </a>
           </div>
         </div>
       </div>
@@ -2007,7 +2033,10 @@ AGENTS.md</pre>
       <div class="footer-main">
         <strong>www.zltastopa.sk</strong>
         <a href="https://github.com/zltastopa/zmluvy" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <a href="https://discord.gg/zltastopa" target="_blank" rel="noreferrer noopener">Discord</a>
+        <a class="with-icon" href="https://discord.gg/zltastopa" target="_blank" rel="noreferrer noopener">
+          <svg class="discord-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.545 2.907A13.227 13.227 0 0 0 10.227 1.9a.051.051 0 0 0-.053.025c-.144.25-.304.577-.416.836a12.19 12.19 0 0 0-3.516 0 8.45 8.45 0 0 0-.422-.836.052.052 0 0 0-.053-.025 13.157 13.157 0 0 0-3.318 1.006.05.05 0 0 0-.024.02C.533 5.754-.034 8.51.244 11.232a.06.06 0 0 0 .023.04 13.361 13.361 0 0 0 4.066 2.045.052.052 0 0 0 .056-.02c.313-.43.592-.885.835-1.365a.051.051 0 0 0-.028-.07 8.645 8.645 0 0 1-1.243-.593.052.052 0 0 1-.005-.086c.084-.062.168-.126.248-.191a.05.05 0 0 1 .052-.007c2.619 1.195 5.456 1.195 8.044 0a.05.05 0 0 1 .053.006c.08.066.164.13.249.192a.052.052 0 0 1-.004.086 8.215 8.215 0 0 1-1.244.592.052.052 0 0 0-.028.07c.248.48.526.936.836 1.365a.052.052 0 0 0 .056.02 13.34 13.34 0 0 0 4.067-2.045.05.05 0 0 0 .022-.04c.334-3.145-.559-5.877-2.181-8.306a.041.041 0 0 0-.024-.02ZM5.683 9.817c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.636 1.612-1.438 1.612Zm4.634 0c-.79 0-1.438-.724-1.438-1.612 0-.889.636-1.613 1.438-1.613.809 0 1.45.73 1.438 1.613 0 .888-.63 1.612-1.438 1.612Z"/></svg>
+          <span>Discord</span>
+        </a>
         <a href="mailto:hello@zltastopa.sk">hello@zltastopa.sk</a>
       </div>
       <a class="easter-egg" href="#" aria-label="Some snow is better left untouched.">Some snow is better left untouched.</a>
