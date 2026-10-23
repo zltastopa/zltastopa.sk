@@ -45,8 +45,11 @@ def picture(project, *, eager=False):
     sizes = '(max-width:760px) 45vw, 320px' if eager else ('(max-width:760px) 90vw, 640px' if project.get('featured') else '(max-width:760px) 34vw, 250px')
     return f'<img src="{text(project["image"])}" srcset="{text(", ".join(candidates))}" sizes="{sizes}" alt="{text(project["alt"])}" width="{width}" height="{height}" loading="{"eager" if eager else "lazy"}" decoding="async">'
 
+def open_control(arrow, label):
+    return f'<span class="paper-action" aria-hidden="true"><span class="paper-action-label">{text(label)}</span>{arrow}</span>'
+
 def board_item(project):
-    return f'''<a class="board-paper board-{text(project['board'])}" href="{text(project['url'])}" aria-label="Otvoriť projekt: {text(project['name'])}"><span class="pin-anchor" aria-hidden="true"></span><div class="paper-image">{picture(project,eager=True)}</div><span class="paper-caption"><span>{text(project['boardLabel'])}</span>{external}</span></a>'''
+    return f'''<a class="board-paper board-{text(project['board'])}" href="{text(project['url'])}" aria-label="Otvoriť projekt: {text(project['name'])}"><span class="pin-anchor" aria-hidden="true"></span><div class="paper-image">{picture(project,eager=True)}</div><span class="paper-caption"><span>{text(project['boardLabel'])}</span>{open_control(external, 'Otvoriť')}</span></a>'''
 
 def project_card(project):
     featured = project.get('featured', False)
@@ -62,6 +65,7 @@ content = Template((ROOT / 'templates/home.html').read_text()).substitute(
     board_items='\n'.join(board_item(p) for p in data['projects'] if p.get('board')),
     featured_projects='\n'.join(project_card(p) for p in data['projects'] if p.get('featured')),
     more_projects='\n'.join(project_card(p) for p in data['projects'] if not p.get('featured')),
+    toolkit_action=open_control(down, 'Pozrieť'),
     board_toolkit_url=text(board_toolkit['url']),
     board_toolkit_title='<br>'.join(text(line) for line in board_toolkit['titleLines']),
     board_toolkit_prompt=text(board_toolkit['prompt']),
