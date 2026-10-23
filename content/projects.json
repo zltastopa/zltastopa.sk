@@ -7,7 +7,6 @@
       "url": "https://rozpocet.zltastopa.sk/",
       "image": "assets/home/budget.webp",
       "alt": "Farebná mapa štátneho rozpočtu rozdeleného na 100 eur",
-      "author": "Marek Šuppa",
       "context": "Rok 2027 je čiastočne odhad.",
       "featured": true,
       "board": "budget",
@@ -20,7 +19,6 @@
       "url": "https://potravinova-dostupnost.zltastopa.sk/",
       "image": "assets/home/food.webp",
       "alt": "Mapa dostupnosti potravín v slovenských obciach",
-      "author": "Andrej Baran",
       "context": "Modelovaná dostupnosť.",
       "featured": true,
       "board": "food",
@@ -61,8 +59,12 @@
       "alt": "Vyhľadávanie a prehľady verejných zmlúv v CRZ"
     }
   ],
-  "reporter": {
-    "image": "assets/home/reporter.webp",
-    "alt": "Ilustrovaná reportérka so žltým mikrofónom pred Bratislavou"
+  "boardToolkit": {
+    "titleLines": [
+      "Vlastné",
+      "pátranie"
+    ],
+    "audience": "Pre novinárov",
+    "url": "#toolkit"
   }
 }

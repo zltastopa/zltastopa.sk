@@ -1,5 +1,6 @@
 """Build the static, JS-independent homepage from one editable project inventory."""
 import json
+from hashlib import sha256
 from html import escape
 from pathlib import Path
 from string import Template
@@ -8,6 +9,13 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 SHARED = ROOT.parent / 'design-system'
 data = json.loads((ROOT / 'content/projects.json').read_text())
+for source,destination in [('tokens.css','tokens.css'),('patterns/home-noticeboard.css','home.css'),('patterns/social-icons.svg','icons.svg')]:
+    if (SHARED / source).exists():
+        (ROOT / 'assets/home' / destination).write_text((SHARED / source).read_text())
+version = sha256(b''.join((ROOT / path).read_bytes() for path in [
+    'templates/home.html', 'content/projects.json', 'assets/home/home.css',
+    'assets/home/home.js', 'assets/home/icons.svg', 'assets/home/tokens.css'
+])).hexdigest()[:10]
 external = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg>'
 down = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14m-5-5 5 5 5-5"/></svg>'
 
@@ -42,19 +50,20 @@ def board_item(project):
 
 def project_card(project):
     featured = project.get('featured', False)
-    attribution = f'<span>{text(project["author"])}</span>' if project.get('author') else ''
     context = f'<p class="project-context">{text(project["context"])}</p>' if project.get('context') else ''
-    return f'''<article class="project-card {"project-featured" if featured else "project-compact"}"><a href="{text(project['url'])}" class="project-link"><div class="project-image">{picture(project)}</div><div class="project-copy"><h3>{text(project['name'])}{external}</h3><p>{text(project['description'])}</p>{f'<div class="project-byline">{attribution}</div>' if attribution else ''}{context}</div></a></article>'''
+    return f'''<article class="project-card {"project-featured" if featured else "project-compact"}"><a href="{text(project['url'])}" class="project-link"><div class="project-image">{picture(project)}</div><div class="project-copy"><h3>{text(project['name'])}{external}</h3><p>{text(project['description'])}</p>{context}</div></a></article>'''
 
-reporter = data['reporter']
+def icon(name):
+    return f'<svg class="social-icon icon-{name}" aria-hidden="true"><use href="assets/home/icons.svg?v={version}#{name}"></use></svg>'
+
+board_toolkit = data['boardToolkit']
 content = Template((ROOT / 'templates/home.html').read_text()).substitute(
-    external=external,down=down,
+    version=version,external=external,down=down,github=icon('github'),discord=icon('discord'),mail=icon('mail'),search=icon('search'),
     board_items='\n'.join(board_item(p) for p in data['projects'] if p.get('board')),
     featured_projects='\n'.join(project_card(p) for p in data['projects'] if p.get('featured')),
     more_projects='\n'.join(project_card(p) for p in data['projects'] if not p.get('featured')),
-    reporter_picture=picture({**reporter,'id':'reporter'},eager=True))
+    board_toolkit_url=text(board_toolkit['url']),
+    board_toolkit_title='<br>'.join(text(line) for line in board_toolkit['titleLines']),
+    board_toolkit_audience=text(board_toolkit['audience']))
 (ROOT / 'index.html').write_text(content)
-for source,destination in [('tokens.css','tokens.css'),('patterns/home-noticeboard.css','home.css')]:
-    if (SHARED / source).exists():
-        (ROOT / 'assets/home' / destination).write_text((SHARED / source).read_text())
-print(f'Built homepage: {len(data["projects"])} projects, three pinned screenshots and one reporter.')
+print(f'Built homepage: {len(data["projects"])} projects, three pinned screenshots and a toolkit card.')

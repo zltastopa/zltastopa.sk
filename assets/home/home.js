@@ -3,7 +3,7 @@
   const board = document.querySelector('.board-content');
   const svg = document.querySelector('.board-threads');
   if (!board || !svg) return;
-  const pins = ['.board-budget .pin', '.board-food .pin', '.board-reporter .pin', '.board-rings .pin'];
+  const pins = ['.board-budget .pin', '.board-food .pin', '.board-toolkit .pin', '.board-rings .pin'];
   let frame;
   function draw() {
     // offset coordinates avoid perspective-transformed bounding rectangles.

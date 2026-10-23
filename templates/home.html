@@ -12,21 +12,21 @@
   <meta property="og:title" content="Žltá stopa · Slovensko v dátach">
   <meta property="og:description" content="Keď niečo smrdí, zostane stopa. Mapy, grafy a nástroje o Slovensku. Na jednom mieste.">
   <meta property="og:url" content="https://zltastopa.sk/">
-  <meta property="og:image" content="https://zltastopa.sk/assets/home/social.jpg">
+  <meta property="og:image" content="https://zltastopa.sk/assets/home/social.jpg?v=$version">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="assets/home/public-sans-bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="assets/home/tokens.css">
-  <link rel="stylesheet" href="assets/home/home.css">
-  <script src="assets/home/home.js" defer></script>
+  <link rel="stylesheet" href="assets/home/tokens.css?v=$version">
+  <link rel="stylesheet" href="assets/home/home.css?v=$version">
+  <script src="assets/home/home.js?v=$version" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Preskočiť na obsah</a>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="#top" aria-label="Žltá stopa, domov"><img src="assets/home/logo.png" alt="Žltá stopa" width="76" height="70"></a>
-      <nav aria-label="Hlavná navigácia"><a href="#projekty">Projekty</a><a href="#o-projekte">O nás</a><a href="#toolkit">Toolkit</a><a class="nav-github" href="https://github.com/zltastopa">GitHub $external</a></nav>
+      <nav aria-label="Hlavná navigácia"><a href="#projekty">Projekty</a><a href="#o-projekte">Pridaj sa</a><a href="#toolkit">Toolkit</a><a class="nav-github" href="https://github.com/zltastopa" aria-label="Žltá stopa na GitHube" title="GitHub">$github</a></nav>
     </div>
   </header>
   <main id="main">
@@ -43,13 +43,12 @@
             <div class="board-content">
               <svg class="board-threads" aria-hidden="true"><path></path></svg>
               $board_items
-              <figure class="board-reporter" aria-label="Ilustrované štúdio Žltej stopy">
+              <a class="board-toolkit" href="$board_toolkit_url" aria-label="Investigatívny toolkit pre novinárov">
                 <span class="pin" aria-hidden="true"></span>
-                <div class="mini-tv">
-                  <div class="tv-glass">$reporter_picture<span class="tv-reflection" aria-hidden="true"></span></div>
-                  <div class="tv-chin" aria-hidden="true"><span>ŽS / TV</span><i></i><b></b><b></b><b></b></div>
-                </div>
-              </figure>
+                <span class="dossier-top"><span>TOOLKIT</span>$search</span>
+                <strong class="dossier-title">$board_toolkit_title</strong>
+                <span class="dossier-bottom">$board_toolkit_audience $down</span>
+              </a>
             </div>
           </div>
         </div>
@@ -62,11 +61,11 @@
     </section>
     <section class="about" id="o-projekte" aria-labelledby="about-title">
       <div class="shell about-inner">
-        <div class="about-copy"><h2 id="about-title">Máš projekt?<br>Pridaj ho k nám.</h2><p>Tvoríš niečo z verejných dát o Slovensku? Ukáž nám svoj projekt. Alebo nápad, ktorý ešte len vzniká.</p><a class="text-link" href="https://discord.gg/3rMUDFeFz7">Pridaj sa na Discord $external</a></div>
-        <div class="toolkit" id="toolkit"><span id="steps" class="anchor-alias" aria-hidden="true"></span><div class="toolkit-symbol" aria-hidden="true"><span>&gt;_</span><i></i></div><h3>Chceš pátrať ďalej?</h3><p>Pomôcky a postupy pre AI agentov na skúmanie zmlúv, firiem a verejných registrov.</p><a class="text-link" href="https://github.com/zltastopa/zltastopa">Toolkit a investigatívne skills $external</a></div>
+        <div class="about-copy"><h2 id="about-title">Máš projekt?<br>Pridaj ho k nám.</h2><p>Tvoríš niečo z verejných dát o Slovensku? Ukáž nám svoj projekt. Alebo nápad, ktorý ešte len vzniká.</p><a class="text-link" href="https://discord.gg/3rMUDFeFz7">$discord Pridaj sa na Discord</a></div>
+        <div class="toolkit" id="toolkit"><span id="steps" class="anchor-alias" aria-hidden="true"></span><div class="toolkit-symbol" aria-hidden="true"><span>&gt;_</span><i></i></div><h3>Toolkit pre novinárov.</h3><p>Pre investigatívnych novinárov, analytikov aj občianske iniciatívy. Skills pre AI agentov, ktoré pomáhajú prepojiť zmluvy, firmy a verejné registre.</p><a class="text-link" href="https://github.com/zltastopa/zltastopa">$github Otvoriť toolkit</a></div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="shell footer-inner"><a class="brand" href="#top" aria-label="Žltá stopa, späť hore"><img src="assets/home/logo.png" alt="Žltá stopa" width="70" height="64" loading="lazy"></a><p>Verejné dáta. Vlastný úsudok.</p><nav aria-label="Kontakt"><a href="https://github.com/zltastopa">GitHub $external</a><a href="https://discord.gg/3rMUDFeFz7">Discord $external</a><a href="mailto:hello@zltastopa.sk">Napíš nám $external</a></nav></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><a class="brand" href="#top" aria-label="Žltá stopa, späť hore"><img src="assets/home/logo.png" alt="Žltá stopa" width="70" height="64" loading="lazy"></a><p>Verejné dáta. Vlastný úsudok.</p><nav aria-label="Kontakt"><a href="https://github.com/zltastopa">$github GitHub</a><a href="https://discord.gg/3rMUDFeFz7">$discord Discord</a><a href="mailto:hello@zltastopa.sk">$mail Napíš nám</a></nav></div></footer>
 </body>
 </html>
