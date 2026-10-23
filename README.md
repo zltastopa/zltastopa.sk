@@ -60,7 +60,7 @@ The old `#projects` and `#steps` fragment links continue to reach the project li
 
 ## Toolkit and identity refinement
 
-The fourth board tile is a pinned “Vlastné pátranie” card linking to the toolkit section. The section names investigative journalists, analysts and civic initiatives as the audience, and explains that the skills work with AI agents.
+The fourth board tile is a pinned “Chceš pátrať sám?” / “AI Toolkit investigatívca” card linking to the toolkit section. The section names investigative journalists, analysts and civic initiatives as the audience, and explains that the skills work with AI agents.
 
 The landing page and its project inventory use project names without personal creator bylines. Project names and destination links remain. Archived comparison pages are separate from the current landing page.
 

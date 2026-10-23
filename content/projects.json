@@ -61,10 +61,10 @@
   ],
   "boardToolkit": {
     "titleLines": [
-      "Vlastné",
-      "pátranie"
+      "AI Toolkit",
+      "investigatívca"
     ],
-    "audience": "Pre novinárov",
-    "url": "#toolkit"
+    "url": "#toolkit",
+    "prompt": "Chceš pátrať sám?"
   }
 }

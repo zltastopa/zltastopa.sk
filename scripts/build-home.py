@@ -64,6 +64,7 @@ content = Template((ROOT / 'templates/home.html').read_text()).substitute(
     more_projects='\n'.join(project_card(p) for p in data['projects'] if not p.get('featured')),
     board_toolkit_url=text(board_toolkit['url']),
     board_toolkit_title='<br>'.join(text(line) for line in board_toolkit['titleLines']),
-    board_toolkit_audience=text(board_toolkit['audience']))
+    board_toolkit_prompt=text(board_toolkit['prompt']),
+    board_toolkit_label=text(board_toolkit['prompt']+' '+' '.join(board_toolkit['titleLines'])))
 (ROOT / 'index.html').write_text(content)
 print(f'Built homepage: {len(data["projects"])} projects, three pinned screenshots and a toolkit card.')

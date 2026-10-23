@@ -102,3 +102,12 @@
 .thread-cord [data-thread=fiber]{stroke:#f4dc80;stroke-width:calc(.75px * var(--cord-scale,1));opacity:.56}
 .thread-cord [data-thread=twist]{stroke:#b99b38;stroke-width:calc(.7px * var(--cord-scale,1));stroke-dasharray:.6 3;opacity:.48}
 @media(max-width:760px){.board-content::before{background-size:100% 100%,200px 200px}}
+
+/* The folder carries the invitation and the toolkit name. */
+.dossier-top{display:block;font:400 12px/1.35 'Public Sans',Arial,sans-serif;letter-spacing:-.02em}.dossier-title{font-size:clamp(18px,1.9vw,28px);letter-spacing:-.04em}.dossier-bottom{justify-content:flex-end}
+@media(max-width:1150px) and (min-width:761px){.dossier-top{font-size:10px}.dossier-title{font-size:clamp(15px,1.9vw,22px)}}
+@media(max-width:760px){.dossier-top{font-size:9px}.dossier-title{font-size:15px}}
+@media(min-width:480px) and (max-width:760px){.dossier-top{font-size:11px}.dossier-title{font-size:21px}}
+@media(max-width:370px){.dossier-top{font-size:8px}.dossier-title{font-size:13px}}
+
+@media(max-width:370px){.dossier-title{font-size:12px;letter-spacing:-.055em}}
