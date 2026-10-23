@@ -149,3 +149,19 @@
  .board-stage{width:100%;max-width:min(100%,calc((100svh - 178px)*1.3 + 8px));margin-inline:auto;padding-top:2px;padding-bottom:4px}.projects{padding-top:10px}
  .dossier-title{font-size:clamp(15px,min(1.9vw,3.6svh),26px)}
 }
+
+/* A single, damped settling gesture suggests that the pinned paper can respond. */
+@keyframes board-settle{
+  0%,100%{transform:rotate(var(--paper-angle)) scale(1)}
+  24%{transform:rotate(calc(var(--paper-angle) + .55deg)) scale(1.007)}
+  56%{transform:rotate(calc(var(--paper-angle) - .22deg)) scale(1.003)}
+  80%{transform:rotate(calc(var(--paper-angle) + .08deg)) scale(1.001)}
+}
+@keyframes board-settle-action{
+  0%,100%{background:#20231d;color:#fffef7}
+  30%,58%{background:#f5d16b;color:#20231d}
+}
+@media(prefers-reduced-motion:no-preference){
+ .board-paper.is-settling{animation:board-settle 1150ms ease-in-out 1}
+ .board-paper.is-settling .paper-action{animation:board-settle-action 1150ms ease-in-out 1}
+}

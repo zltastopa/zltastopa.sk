@@ -91,3 +91,11 @@ On desktop, the project section heading stays available to assistive technology 
 Verified across 13 viewport sizes, including 1280 by 720, 1366 by 768, 1440 by 768 and 900, 1536 by 864, 1920 by 720, and phones at 390 and 320 px. Both lead screenshots reveal 123 px at 1280 by 720 and 128 px at 1440 by 900. The board and its image panes have exactly the same dimensions as before at these sizes. Pin registration stays within 1 px during hover, press and focus. Foreground thread stays above active cards. Pointer, keyboard, touch, no-JavaScript and reduced-motion states were exercised without errors.
 
 The two lead project previews load eagerly because they enter the first desktop viewport. Secondary project previews remain lazy-loaded. The build script itself participates in the page version so generated-markup changes also refresh cached previews.
+
+## One-time discovery motion
+
+A first-visit cue gently settles the budget paper around its pin, with a brief warm highlight on its existing action. It starts after 1.4 seconds with at least 65% of the board visible and lasts 1.15 seconds. It plays once per tab session, rather than periodically shaking the board. Visible action controls remain the main click cue. This follows Apple's [purposeful, brief and cancellable motion guidance](https://developer.apple.com/design/human-interface-guidelines/motion).
+
+Hover or focus in the board, pointer/touch input, a keypress, scrolling, hiding the tab or leaving the page cancels the cue. Reduced-motion preference disables it. There is no recurring timer or animation loop. The animation uses CSS transforms around the existing pin origin; the SVG pin and thread remain fixed. `?cue=1` replays the single cue for review, while preserving the accessibility and interaction guards.
+
+Checks: one animation start and clean completion; no replay on normal reload; hover and scroll cancellation; reduced-motion and offscreen suppression; mobile tap cancellation with working toolkit navigation. No layout or desktop image-peek dimensions change.

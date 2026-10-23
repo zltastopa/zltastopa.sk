@@ -55,4 +55,52 @@
   document.fonts?.ready.then(schedule);
   addEventListener('pageshow', schedule);
   draw();
+
+  // One discovery cue per tab session, while the board is visible and untouched.
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const replay = new URLSearchParams(location.search).get('cue') === '1';
+  const seenKey = 'stopa-board-settle-seen';
+  let seen = false;
+  try { seen = sessionStorage.getItem(seenKey) === '1'; } catch {}
+  if (motion.matches || (seen && !replay) || !('IntersectionObserver' in window)) return;
+  const paper = surface.querySelector('.board-budget');
+  let timer = 0, done = false, queued = false;
+  const observer = new IntersectionObserver(entries => {
+    if (!queued && entries[0].intersectionRatio >= .65) {
+      queued = true;
+      observer.disconnect();
+      try { sessionStorage.setItem(seenKey, '1'); } catch {}
+      timer = setTimeout(() => {
+        const rect = board.getBoundingClientRect();
+        const visible = Math.min(rect.bottom, innerHeight) - Math.max(rect.top, 0);
+        if (document.hidden || motion.matches || visible < rect.height * .65 || surface.matches(':hover') || surface.contains(document.activeElement)) { stop(); return; }
+        paper.classList.add('is-settling');
+        timer = setTimeout(stop, 1500);
+      }, 1400);
+    }
+  }, {threshold: [.65]});
+  const inputEvents = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+  function ended(event) { if (event.target === paper && event.animationName === 'board-settle') stop(); }
+  function stop() {
+    if (done) return;
+    done = true;
+    clearTimeout(timer);
+    observer.disconnect();
+    paper.classList.remove('is-settling');
+    paper.removeEventListener('animationend', ended);
+    surface.removeEventListener('pointerover', stop);
+    surface.removeEventListener('focusin', stop);
+    inputEvents.forEach(event => document.removeEventListener(event, stop));
+    document.removeEventListener('visibilitychange', stop);
+    window.removeEventListener('pagehide', stop);
+    motion.removeEventListener('change', stop);
+  }
+  paper.addEventListener('animationend', ended);
+  surface.addEventListener('pointerover', stop, {passive:true});
+  surface.addEventListener('focusin', stop);
+  inputEvents.forEach(event => document.addEventListener(event, stop, {passive:true}));
+  document.addEventListener('visibilitychange', stop);
+  window.addEventListener('pagehide', stop, {once:true});
+  motion.addEventListener('change', stop);
+  observer.observe(board);
 })();
