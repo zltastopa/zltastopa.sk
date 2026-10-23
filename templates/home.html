@@ -39,16 +39,17 @@
         </div>
         <div class="board-stage">
           <div class="noticeboard" aria-label="Nástenka projektov Žltej stopy">
+            <span class="frame-rail frame-top" aria-hidden="true"></span><span class="frame-rail frame-right" aria-hidden="true"></span><span class="frame-rail frame-bottom" aria-hidden="true"></span><span class="frame-rail frame-left" aria-hidden="true"></span>
             <span class="board-screw screw-tl" aria-hidden="true"></span><span class="board-screw screw-tr" aria-hidden="true"></span><span class="board-screw screw-bl" aria-hidden="true"></span><span class="board-screw screw-br" aria-hidden="true"></span>
             <div class="board-content">
-              <svg class="board-threads" aria-hidden="true"><path></path></svg>
               $board_items
               <a class="board-toolkit" href="$board_toolkit_url" aria-label="Investigatívny toolkit pre novinárov">
-                <span class="pin" aria-hidden="true"></span>
+                <span class="pin-anchor" aria-hidden="true"></span>
                 <span class="dossier-top"><span>TOOLKIT</span>$search</span>
                 <strong class="dossier-title">$board_toolkit_title</strong>
                 <span class="dossier-bottom">$board_toolkit_audience $down</span>
               </a>
+              $board_overlay
             </div>
           </div>
         </div>

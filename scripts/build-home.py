@@ -9,12 +9,12 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parents[1]
 SHARED = ROOT.parent / 'design-system'
 data = json.loads((ROOT / 'content/projects.json').read_text())
-for source,destination in [('tokens.css','tokens.css'),('patterns/home-noticeboard.css','home.css'),('patterns/social-icons.svg','icons.svg')]:
+for source,destination in [('tokens.css','tokens.css'),('patterns/home-noticeboard.css','home.css'),('patterns/social-icons.svg','icons.svg'),('patterns/board-overlay.svg','board-overlay.svg')]:
     if (SHARED / source).exists():
         (ROOT / 'assets/home' / destination).write_text((SHARED / source).read_text())
 version = sha256(b''.join((ROOT / path).read_bytes() for path in [
     'templates/home.html', 'content/projects.json', 'assets/home/home.css',
-    'assets/home/home.js', 'assets/home/icons.svg', 'assets/home/tokens.css'
+    'assets/home/home.js', 'assets/home/icons.svg', 'assets/home/tokens.css', 'assets/home/board-overlay.svg'
 ])).hexdigest()[:10]
 external = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg>'
 down = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14m-5-5 5 5 5-5"/></svg>'
@@ -46,7 +46,7 @@ def picture(project, *, eager=False):
     return f'<img src="{text(project["image"])}" srcset="{text(", ".join(candidates))}" sizes="{sizes}" alt="{text(project["alt"])}" width="{width}" height="{height}" loading="{"eager" if eager else "lazy"}" decoding="async">'
 
 def board_item(project):
-    return f'''<a class="board-paper board-{text(project['board'])}" href="{text(project['url'])}" aria-label="Otvoriť projekt: {text(project['name'])}"><span class="pin" aria-hidden="true"></span><div class="paper-image">{picture(project,eager=True)}</div><span class="paper-caption"><span>{text(project['boardLabel'])}</span>{external}</span></a>'''
+    return f'''<a class="board-paper board-{text(project['board'])}" href="{text(project['url'])}" aria-label="Otvoriť projekt: {text(project['name'])}"><span class="pin-anchor" aria-hidden="true"></span><div class="paper-image">{picture(project,eager=True)}</div><span class="paper-caption"><span>{text(project['boardLabel'])}</span>{external}</span></a>'''
 
 def project_card(project):
     featured = project.get('featured', False)
@@ -58,7 +58,7 @@ def icon(name):
 
 board_toolkit = data['boardToolkit']
 content = Template((ROOT / 'templates/home.html').read_text()).substitute(
-    version=version,external=external,down=down,github=icon('github'),discord=icon('discord'),mail=icon('mail'),search=icon('search'),
+    board_overlay=(ROOT / 'assets/home/board-overlay.svg').read_text(),version=version,external=external,down=down,github=icon('github'),discord=icon('discord'),mail=icon('mail'),search=icon('search'),
     board_items='\n'.join(board_item(p) for p in data['projects'] if p.get('board')),
     featured_projects='\n'.join(project_card(p) for p in data['projects'] if p.get('featured')),
     more_projects='\n'.join(project_card(p) for p in data['projects'] if not p.get('featured')),
