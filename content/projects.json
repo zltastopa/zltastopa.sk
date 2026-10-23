@@ -1,0 +1,68 @@
+{
+  "projects": [
+    {
+      "id": "budget",
+      "name": "Na čo míňa štát?",
+      "description": "Štátna kasa ako jedna stovka. Pozri, kam idú peniaze a ako sa to mení v čase.",
+      "url": "https://rozpocet.zltastopa.sk/",
+      "image": "assets/home/budget.webp",
+      "alt": "Farebná mapa štátneho rozpočtu rozdeleného na 100 eur",
+      "author": "Marek Šuppa",
+      "context": "Rok 2027 je čiastočne odhad.",
+      "featured": true,
+      "board": "budget",
+      "boardLabel": "Rozpočet"
+    },
+    {
+      "id": "food",
+      "name": "Potravinový kompas",
+      "description": "Ako ďaleko je z tvojej obce do potravín? Pešo aj autobusom.",
+      "url": "https://potravinova-dostupnost.zltastopa.sk/",
+      "image": "assets/home/food.webp",
+      "alt": "Mapa dostupnosti potravín v slovenských obciach",
+      "author": "Andrej Baran",
+      "context": "Modelovaná dostupnosť.",
+      "featured": true,
+      "board": "food",
+      "boardLabel": "Potraviny"
+    },
+    {
+      "id": "rings",
+      "name": "Letokruhy",
+      "description": "Starne náš parlament? Vek poslancov od roku 1994 v grafoch.",
+      "url": "https://letokruhy.zltastopa.sk/",
+      "image": "assets/home/rings.webp",
+      "alt": "Graf porovnávajúci vek poslancov naprieč volebnými obdobiami",
+      "board": "rings",
+      "boardLabel": "Letokruhy"
+    },
+    {
+      "id": "attendance",
+      "name": "Dochádzka NR SR",
+      "description": "Kto hlasuje a kto chýba? Účasť poslancov na hlasovaniach.",
+      "url": "https://nrsr-dochadzka.zltastopa.sk/",
+      "image": "assets/home/attendance.webp",
+      "alt": "Prehľad účasti poslancov na hlasovaniach Národnej rady"
+    },
+    {
+      "id": "compass",
+      "name": "Majetkový kompas",
+      "description": "Príjmy, nehnuteľnosti a zmeny v majetkových priznaniach verejných funkcionárov.",
+      "url": "https://kompas.zltastopa.sk/",
+      "image": "assets/home/compass.webp",
+      "alt": "Vyhľadávanie v majetkových priznaniach verejných funkcionárov"
+    },
+    {
+      "id": "contracts",
+      "name": "CRZ Explorer",
+      "description": "Verejné zmluvy, dodávatelia a ich prepojenia. Nástroj na podrobnejšie pátranie.",
+      "url": "https://zmluvy.zltastopa.sk/",
+      "image": "assets/home/contracts.webp",
+      "alt": "Vyhľadávanie a prehľady verejných zmlúv v CRZ"
+    }
+  ],
+  "reporter": {
+    "image": "assets/home/reporter.webp",
+    "alt": "Ilustrovaná reportérka so žltým mikrofónom pred Bratislavou"
+  }
+}
