@@ -24,7 +24,8 @@
 .paper-caption>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(min-width:480px) and (max-width:760px){.board-stage{max-width:430px}.hero h1{font-size:56px}}
 
-.project-compact .project-image img{object-fit:cover;object-position:top left}.anchor-alias{display:block;position:relative;top:-20px;visibility:hidden;height:0}
+/* Consistent edge-to-edge previews, without uneven letterboxing at the fold. */
+.project-featured .project-image img,.project-compact .project-image img{object-fit:cover;object-position:top left}.anchor-alias{display:block;position:relative;top:-20px;visibility:hidden;height:0}
 
 .project-compact .project-copy>p{font-size:14px}
 @media(max-width:1150px) and (min-width:761px){.project-compact .project-copy>p{font-size:13px}}

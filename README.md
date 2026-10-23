@@ -33,7 +33,7 @@ The build uses Pillow to read actual image dimensions and create responsive WebP
 
 There are three board slots: `budget`, `food` and `rings`, selected by the project's `board` property. The fourth pin is a toolkit card, configured with `boardToolkit` in the same file. Board captions are real HTML, not part of the screenshot. Caption overflow is truncated visually; the link's accessible name remains complete.
 
-Image widths and heights are read automatically. Portrait, square and panoramic images fit inside their existing paper without cropping or altering the board. Responsive variants are rebuilt automatically. Their aspect ratio does not control the layout. The larger project previews below the board let visitors inspect the products clearly. Compact secondary previews use a top-aligned crop.
+Image widths and heights are read automatically. Portrait, square and panoramic images fit inside their existing paper without cropping or altering the board. Responsive variants are rebuilt automatically. Their aspect ratio does not control the layout. The larger project previews below the board let visitors inspect the products clearly. Featured and compact previews use a top-left-aligned crop to fill their frames evenly. Board images retain the complete screenshot.
 
 To add a project, add an entry with `id`, `name`, `description`, `url`, `image` and `alt`. Set `featured: true` for a large card; omit `board` unless replacing one of the three pinned projects. No JavaScript changes are required.
 
