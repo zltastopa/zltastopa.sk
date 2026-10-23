@@ -1,3 +1,4 @@
+import {chosenPage} from './hero/base.js';
 import {brandHero} from './hero.js';
 import {projects} from './projects.js';
 import {directions} from './directions.js';
@@ -45,7 +46,9 @@ if(n===11)content=`${brandHero({shot,projects:P,tag})}${grid('Tu začína tvoja 
 document.body.dataset.direction=D.slug;
 document.title=`Žltá stopa / ${D.name}`;
 document.querySelector('#app').innerHTML=`<nav class="preview-nav" aria-label="Návrhy úvodnej stránky"><a href="index.html">◫ Všetky návrhy</a><span>VYBERÁME NOVÝ WEB</span><div><a href="concept.html?v=${n===1?directions.length:n-1}" aria-label="Predchádzajúci návrh">←</a><label class="sr-only" for="direction-select">Vybrať návrh</label><select id="direction-select">${directions.map(d=>`<option value="${d.id}" ${d.id===n?'selected':''}>${String(d.id).padStart(2,'0')} / ${d.name}</option>`).join('')}</select><a href="concept.html?v=${n===directions.length?1:n+1}" aria-label="Ďalší návrh">→</a></div></nav>${header}<main id="main">${content}${tail}</main>`;
-document.querySelector('#direction-select').addEventListener('change',e=>location.href=`concept.html?v=${e.target.value}`);
+if(n===11)document.querySelector('#app').innerHTML=chosenPage({heroHtml:brandHero({shot,projects:P,tag,lean:true}),projects:P});
+
+document.querySelector('#direction-select')?.addEventListener('change',e=>location.href=`concept.html?v=${e.target.value}`);
 document.querySelectorAll('[data-feature]').forEach(b=>b.addEventListener('click',()=>{
  const p=P[Number(b.dataset.feature)];document.querySelectorAll('[data-feature]').forEach(x=>x.setAttribute('aria-pressed',x===b));
  document.querySelector('#feature').innerHTML=`${shot(p)}<div class="cinema-caption"><div>${tag(`${p.num} / ${p.tag}`)}<h2>${p.name}</h2><p>${p.caption}</p></div>${cta(p)}</div>`;

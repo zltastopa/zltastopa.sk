@@ -35,4 +35,8 @@ After editing them, run `python3 navrhy/build-brand.py` from the homepage reposi
 3. Findings: the yellow logo disappeared on yellow, the copy did not carry the joke, and the gallery itself suggested a useful extra homepage direction.
 4. Changes: ten revised directions, a new three-screen hero, reusable white-backed brand treatment, a public comparison gallery and shareable shortlists.
 5. Checks: all eleven concepts at 1440, 390 and 360 CSS pixels; gallery at the same widths; no horizontal overflow, broken images, fragment destinations or JavaScript errors. White logo backgrounds verified throughout. Cinema, directory and rail interactions passed, as did shortlist restoration, selection, clearing and copied URLs. The first project row in concept 11 begins at 919 pixels in a 1050-pixel desktop viewport and at 797 pixels in an 844-pixel phone viewport.
-6. Verdict: a verified comparison for choosing a direction. No individual homepage is selected on Peter's behalf.
+6. Verdict: a verified comparison for choosing a direction. Peter subsequently selected concept 11. Its header is now fully white and its copy is reduced. The new right-side comparison is at `hero/`.
+
+## Selected layout
+
+Peter selected concept 11 on 23 October 2026. Ten right-side treatments are available at <https://zltastopa.sk/navrhy/hero/>. The full menu is white, the hero yellow, and copy is reduced across the selected page. See `hero/README.md` for implementation, asset provenance and checks. Production `/` remains unchanged.
