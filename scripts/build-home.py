@@ -14,7 +14,7 @@ for source,destination in [('tokens.css','tokens.css'),('patterns/home-noticeboa
         (ROOT / 'assets/home' / destination).write_text((SHARED / source).read_text())
 version = sha256(b''.join((ROOT / path).read_bytes() for path in [
     'templates/home.html', 'content/projects.json', 'assets/home/home.css',
-    'assets/home/home.js', 'assets/home/icons.svg', 'assets/home/tokens.css', 'assets/home/board-overlay.svg'
+    'assets/home/home.js', 'assets/home/icons.svg', 'assets/home/tokens.css', 'assets/home/board-overlay.svg', 'scripts/build-home.py'
 ])).hexdigest()[:10]
 external = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg>'
 down = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14m-5-5 5 5 5-5"/></svg>'
@@ -43,7 +43,7 @@ def picture(project, *, eager=False):
         candidates.append(f'{output.relative_to(ROOT)} {target}w')
     candidates.append(f'{project["image"]} {width}w')
     sizes = '(max-width:760px) 45vw, 320px' if eager else ('(max-width:760px) 90vw, 640px' if project.get('featured') else '(max-width:760px) 34vw, 250px')
-    return f'<img src="{text(project["image"])}" srcset="{text(", ".join(candidates))}" sizes="{sizes}" alt="{text(project["alt"])}" width="{width}" height="{height}" loading="{"eager" if eager else "lazy"}" decoding="async">'
+    return f'<img src="{text(project["image"])}" srcset="{text(", ".join(candidates))}" sizes="{sizes}" alt="{text(project["alt"])}" width="{width}" height="{height}" loading="{"eager" if eager or project.get("featured") else "lazy"}" decoding="async">'
 
 def open_control(arrow, label):
     return f'<span class="paper-action" aria-hidden="true"><span class="paper-action-label">{text(label)}</span>{arrow}</span>'
