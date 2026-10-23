@@ -1,0 +1,128 @@
+:root {
+  --stopa-color-bg: #f5f1e7;
+  --stopa-color-bg-elevated: #fbf8f1;
+  --stopa-color-surface: #ffffff;
+  --stopa-color-surface-muted: #faf7ef;
+  --stopa-color-surface-strong: #f1ece3;
+  --stopa-color-field: rgba(251, 248, 241, 0.96);
+  --stopa-color-field-focus: rgba(255, 255, 255, 0.98);
+  --stopa-color-search-surface: rgba(255, 255, 255, 0.98);
+  --stopa-color-search-surface-focus: rgba(255, 250, 236, 0.98);
+  --stopa-color-scroll-track: rgba(248, 243, 231, 0.96);
+  --stopa-color-scroll-thumb: rgba(223, 158, 0, 0.68);
+  --stopa-color-scroll-thumb-hover: rgba(223, 158, 0, 0.88);
+  --stopa-color-text: #131313;
+  --stopa-color-text-soft: rgba(19, 19, 19, 0.72);
+  --stopa-color-text-faint: rgba(19, 19, 19, 0.52);
+  --stopa-color-line: rgba(19, 19, 19, 0.08);
+  --stopa-color-line-strong: rgba(19, 19, 19, 0.18);
+  --stopa-color-dot: rgba(19, 19, 19, 0.1);
+
+  --stopa-color-brand-50: #fff9db;
+  --stopa-color-brand-100: #fff1b5;
+  --stopa-color-brand-300: #ffd54a;
+  --stopa-color-brand-500: #ffc400;
+  --stopa-color-brand-700: #df9e00;
+
+  --stopa-color-info: #2f73ff;
+  --stopa-color-success: #2f8f58;
+  --stopa-color-warning: #b56a00;
+  --stopa-color-danger: #c2473f;
+
+  --stopa-color-product-accent: var(--stopa-color-brand-500);
+  --stopa-color-product-accent-soft: var(--stopa-color-brand-50);
+  --stopa-color-product-accent-strong: var(--stopa-color-brand-700);
+
+  --stopa-font-display: "Public Sans", "Inter", "Segoe UI", sans-serif;
+  --stopa-font-ui: "Inter", "Segoe UI", sans-serif;
+  --stopa-font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  --stopa-text-display-1: 800 clamp(2.4rem, 4.6vw, 4.6rem) / 0.94 var(--stopa-font-display);
+  --stopa-text-display-2: 800 clamp(1.9rem, 3vw, 3rem) / 0.96 var(--stopa-font-display);
+  --stopa-text-title-1: 750 1.55rem / 1.05 var(--stopa-font-display);
+  --stopa-text-title-2: 750 1.18rem / 1.15 var(--stopa-font-display);
+  --stopa-text-kpi: 800 clamp(2rem, 2.6vw, 3.2rem) / 0.9 var(--stopa-font-display);
+  --stopa-text-body-lg: 560 1.05rem / 1.45 var(--stopa-font-ui);
+  --stopa-text-body: 510 0.97rem / 1.45 var(--stopa-font-ui);
+  --stopa-text-body-sm: 510 0.88rem / 1.4 var(--stopa-font-ui);
+  --stopa-text-label: 700 0.75rem / 1.2 var(--stopa-font-ui);
+  --stopa-text-mono: 520 0.8rem / 1.4 var(--stopa-font-mono);
+
+  --stopa-space-1: 0.25rem;
+  --stopa-space-2: 0.5rem;
+  --stopa-space-3: 0.75rem;
+  --stopa-space-4: 1rem;
+  --stopa-space-5: 1.25rem;
+  --stopa-space-6: 1.5rem;
+  --stopa-space-7: 2rem;
+  --stopa-space-8: 2.5rem;
+  --stopa-space-9: 3rem;
+  --stopa-space-10: 4rem;
+
+  --stopa-radius-xs: 0.5rem;
+  --stopa-radius-sm: 0.75rem;
+  --stopa-radius-md: 1rem;
+  --stopa-radius-lg: 1.25rem;
+  --stopa-radius-xl: 1.75rem;
+  --stopa-radius-pill: 999px;
+
+  --stopa-border-soft: 1px solid var(--stopa-color-line);
+  --stopa-border-strong: 1px solid var(--stopa-color-line-strong);
+  --stopa-rail-width: 0.375rem;
+  --stopa-rail-gap: 1rem;
+
+  --stopa-shadow-card: 0 10px 22px rgba(17, 17, 17, 0.06), 0 2px 8px rgba(17, 17, 17, 0.04);
+  --stopa-shadow-lift: 0 16px 36px rgba(17, 17, 17, 0.1), 0 4px 12px rgba(17, 17, 17, 0.05);
+  --stopa-shadow-overlay: 0 24px 64px rgba(17, 17, 17, 0.16), 0 4px 18px rgba(17, 17, 17, 0.08);
+  --stopa-shadow-search: 0 14px 30px rgba(17, 17, 17, 0.07), 0 3px 10px rgba(17, 17, 17, 0.045);
+
+  --stopa-motion-fast: 140ms ease;
+  --stopa-motion-base: 180ms ease;
+  --stopa-layout-max: 86rem;
+  --stopa-layout-reading: 58rem;
+  --stopa-layout-gutter: clamp(1rem, 2vw, 1.5rem);
+  --stopa-topbar-height: 4rem;
+  --stopa-topbar-offset: 1rem;
+  --stopa-control-height: 2.25rem;
+  --stopa-search-height: 3.5rem;
+}
+
+[data-product="zmluvy"],
+[data-product="majetkovy-kompas"],
+[data-product="agent-wall-demo"] {
+  --stopa-color-product-accent: var(--stopa-color-brand-500);
+  --stopa-color-product-accent-soft: var(--stopa-color-brand-50);
+  --stopa-color-product-accent-strong: var(--stopa-color-brand-700);
+}
+
+/* The yellow circles need white behind them: the mark refers to pee on snow. */
+.brand,.study-header>a:first-child,.footer-logo{background:#fff!important;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;justify-content:center;flex:none;line-height:0}
+.brand img,.study-header>a:first-child img,.footer-logo img{object-fit:contain;display:block}
+.brand img{width:64px;height:60px}
+.footer-logo img{width:65px;height:59px}
+.brand:hover,.study-header>a:first-child:hover,.footer-logo:hover{outline:1px solid #15151240;outline-offset:3px}
+@media(max-width:760px){.brand,.study-header>a:first-child{padding:4px 7px}.brand img{width:53px;height:48px}.study-header>a:first-child img{width:53px;height:48px}.footer-logo img{width:58px;height:52px}}
+
+/* Promotional homepage: three real screens, two lead projects, visible next row. */
+.beacon-hero{background:var(--yellow);height:clamp(490px,calc(100svh - 350px),760px);padding:35px var(--gutter) 28px;display:grid;grid-template-columns:.93fr 1.07fr;gap:32px;align-items:center;overflow:hidden;position:relative}
+.beacon-copy{position:relative;z-index:4;max-width:610px}
+.beacon-copy h1{font-size:clamp(57px,5.1vw,88px);line-height:.97;letter-spacing:-.065em;margin-top:23px}
+.beacon-copy h1 em{font-style:normal;background:#fff;box-shadow:7px 0 #fff,-3px 0 #fff;color:#151512;line-height:1.18;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.beacon-copy p{font-size:12px;line-height:1.75;max-width:395px;margin-top:24px}
+.beacon-copy>.cta{margin-top:22px}
+.beacon-screens{height:100%;max-height:500px;min-height:400px;position:relative}
+.beacon-budget{position:absolute;width:86%;left:1%;top:4%;transform:rotate(-4deg);z-index:1;box-shadow:0 24px 45px #71500028}
+.beacon-rings{position:absolute;width:47%;left:-7%;bottom:0;transform:rotate(-5deg);z-index:2;box-shadow:0 18px 35px #71500028}
+.beacon-food{position:absolute;width:69%;right:-2%;bottom:8%;transform:rotate(5deg);z-index:3;box-shadow:0 20px 40px #71500030}
+.beacon-rings>img{aspect-ratio:1.75;object-fit:contain}
+.beacon-food>img{aspect-ratio:1.7;object-fit:contain}
+.beacon-scroll{position:absolute;bottom:17px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;gap:20px;font:8px/1.5 var(--mono);border-top:1px solid #15151230;padding-top:10px}
+.beacon-scroll a{font-size:9px;font-weight:700}
+.beacon-scroll a:hover{text-decoration:underline}
+.project-peek{padding-top:32px}
+.project-peek .section-title{margin-bottom:23px}
+.project-peek .section-title h2{font-size:37px}
+[data-direction=beacon] .site-header{background:var(--yellow);height:94px}
+@media(max-width:1100px){.beacon-hero{grid-template-columns:1fr 1fr;gap:20px}.beacon-copy h1{font-size:clamp(50px,5.5vw,65px)}.beacon-screens{min-height:370px}.beacon-copy p{font-size:11px;max-width:330px}.beacon-rings{left:-4%}}
+@media(max-width:760px){.beacon-hero{height:auto;min-height:0;display:block;padding:25px 20px 18px}.beacon-copy h1{font-size:49px;margin-top:17px;line-height:.96}.beacon-copy>.eyebrow{font-size:7px}.beacon-copy p{font-size:11px;line-height:1.6;margin-top:16px;max-width:315px}.beacon-copy>.cta{margin-top:15px;min-height:38px;padding:9px 13px;font-size:10px}.beacon-screens{height:225px;min-height:0;margin:18px 4px 8px 12px}.beacon-budget{width:85%;top:7%;left:0}.beacon-food{width:67%;right:-1%;bottom:6%}.beacon-rings{width:46%;left:-5%;bottom:0}.beacon-screens .window-dots{display:none}.beacon-screens .window-title strong{font-size:7px}.beacon-screens .window-top{height:21px;padding:0 6px}.beacon-scroll{position:static;left:auto;right:auto;font-size:6px;padding-top:9px;gap:12px;margin-top:15px}.beacon-scroll>a{font-size:8px;white-space:nowrap}.project-peek{padding-top:26px}.project-peek .section-title{margin-bottom:20px}.project-peek .section-title h2{font-size:30px}.project-peek .section-title>.eyebrow{display:none}[data-direction=beacon] .site-header{height:80px}}
+@media(max-width:370px){.beacon-copy h1{font-size:44px}.beacon-screens{height:205px}}

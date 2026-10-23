@@ -1,0 +1,38 @@
+[
+  {
+    "id": "budget",
+    "url": "https://rozpocet.zltastopa.sk/#2027",
+    "capturedAt": "2026-10-23T14:05:18.321Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  },
+  {
+    "id": "food",
+    "url": "https://potravinova-dostupnost.zltastopa.sk/",
+    "capturedAt": "2026-10-23T14:05:19.150Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  },
+  {
+    "id": "rings",
+    "url": "https://letokruhy.zltastopa.sk/",
+    "capturedAt": "2026-10-23T14:05:20.035Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  },
+  {
+    "id": "attendance",
+    "url": "https://nrsr-dochadzka.zltastopa.sk/?term=9&window=180d&absence=abs0n",
+    "capturedAt": "2026-10-23T14:05:21.087Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  },
+  {
+    "id": "compass",
+    "url": "https://kompas.zltastopa.sk/",
+    "capturedAt": "2026-10-23T14:05:21.902Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  },
+  {
+    "id": "contracts",
+    "url": "https://zmluvy.zltastopa.sk/",
+    "capturedAt": "2026-10-23T14:05:23.450Z",
+    "type": "unaltered rendered interface, browser-cropped"
+  }
+]
