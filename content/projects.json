@@ -10,7 +10,7 @@
       "context": "Rok 2027 je čiastočne odhad.",
       "featured": true,
       "board": "budget",
-      "boardLabel": "Rozpočet"
+      "boardLabel": "Kam ide 100 €?"
     },
     {
       "id": "food",
@@ -22,7 +22,7 @@
       "context": "Modelovaná dostupnosť.",
       "featured": true,
       "board": "food",
-      "boardLabel": "Potraviny"
+      "boardLabel": "Kde nakúpiš?"
     },
     {
       "id": "rings",
@@ -32,7 +32,7 @@
       "image": "assets/home/rings.webp",
       "alt": "Graf porovnávajúci vek poslancov naprieč volebnými obdobiami",
       "board": "rings",
-      "boardLabel": "Letokruhy"
+      "boardLabel": "Vek poslancov"
     },
     {
       "id": "attendance",

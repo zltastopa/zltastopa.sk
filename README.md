@@ -105,3 +105,9 @@ Checks: one animation start and clean completion; no replay on normal reload; ho
 Ten bold headline alternatives are available at [`navrhy/pismo/`](https://zltastopa.sk/navrhy/pismo/), each with a numbered sharing URL. The comparison uses the current homepage and local, licensed fonts. It does not change the production headline. Rebuild with `python3 navrhy/pismo/build.py` after updating the homepage; see that folder's README for font sources and maintenance.
 
 Peter selected option 04, Sora ExtraBold, for the hero headline on 24 October 2026. It is locally hosted as `assets/home/sora-extrabold.ttf` with its OFL license. The three-line headline fits through CSS alone, including narrow phones. Public Sans remains the interface and body font.
+
+## Civic-data clarity review
+
+Three critique rounds refined the selected page without changing its layout. The hero now explicitly names public data, board captions explain useful questions, the header prioritises projects and participation, and “Pošli nám projekt” uses the existing email route. The toolkit remains available from its folder and section, with “Postupy pre AI agentov” replacing the unexplained English term. The browse CTA stays because this is a collection, with budget and food access equally prominent.
+
+The [review and product decisions](docs/homepage-review-2026-10-24.md) record the independent top-five proposals, rejected alternatives, final refinements and verification. The final Sora word gap is .32em; captions fit at 320 px without changing the board's size or the image peek.
