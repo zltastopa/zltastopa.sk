@@ -102,7 +102,7 @@ Checks: one animation start and clean completion; no replay on normal reload; ho
 
 ## Headline type comparison
 
-Ten bold headline alternatives are available at [`navrhy/pismo/`](https://zltastopa.sk/navrhy/pismo/), each with a numbered sharing URL. The comparison uses the current homepage and local, licensed fonts. It does not change the production headline. Rebuild with `python3 navrhy/pismo/build.py` after updating the homepage; see that folder's README for font sources and maintenance.
+Ten bold headline alternatives are available at [`navrhy/pismo/`](https://zltastopa.sk/navrhy/pismo/), each with a numbered sharing URL. The comparison uses the current homepage and local, licensed fonts. It does not change the production headline. The homepage build refreshes that preview automatically, including its asset versions. See that folder's README for font sources and maintenance.
 
 Peter selected option 04, Sora ExtraBold, for the hero headline on 24 October 2026. It is locally hosted as `assets/home/sora-extrabold.ttf` with its OFL license. The three-line headline fits through CSS alone, including narrow phones. Public Sans remains the interface and body font.
 

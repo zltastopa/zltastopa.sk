@@ -1,5 +1,6 @@
 """Build the static, JS-independent homepage from one editable project inventory."""
 import json
+from runpy import run_path
 from hashlib import sha256
 from html import escape
 from pathlib import Path
@@ -72,3 +73,8 @@ content = Template((ROOT / 'templates/home.html').read_text()).substitute(
     board_toolkit_label=text(board_toolkit['prompt']+' '+' '.join(board_toolkit['titleLines'])))
 (ROOT / 'index.html').write_text(content)
 print(f'Built homepage: {len(data["projects"])} projects, three pinned screenshots and a toolkit card.')
+
+# Keep the active font comparison on the same page revision as production.
+study_builder = ROOT / "navrhy/pismo/build.py"
+if study_builder.exists():
+    run_path(str(study_builder))
