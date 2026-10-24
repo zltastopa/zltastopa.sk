@@ -1,0 +1,7 @@
+/* Only the headline changes. The production homepage layout is retained. */
+html[data-font-study] .hero h1{font-synthesis:none;letter-spacing:var(--study-tracking,-.045em);line-height:1.03}
+html[data-font-study] .hero h1 .study-line{display:block;white-space:nowrap;width:max-content}
+html[data-font-study] .hero h1>.study-line.highlight{display:block;line-height:1.2}
+html.font-loading[data-font-study] .hero h1{visibility:hidden}
+
+html[data-font-study] .hero h1 .study-word-space{display:inline-block;width:.24em;letter-spacing:0}

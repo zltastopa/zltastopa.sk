@@ -99,3 +99,7 @@ A first-visit cue gently settles the budget paper around its pin, with a brief w
 Hover or focus in the board, pointer/touch input, a keypress, scrolling, hiding the tab or leaving the page cancels the cue. Reduced-motion preference disables it. There is no recurring timer or animation loop. The animation uses CSS transforms around the existing pin origin; the SVG pin and thread remain fixed. `?cue=1` replays the single cue for review, while preserving the accessibility and interaction guards.
 
 Checks: one animation start and clean completion; no replay on normal reload; hover and scroll cancellation; reduced-motion and offscreen suppression; mobile tap cancellation with working toolkit navigation. No layout or desktop image-peek dimensions change.
+
+## Headline type comparison
+
+Ten bold headline alternatives are available at [`navrhy/pismo/`](https://zltastopa.sk/navrhy/pismo/), each with a numbered sharing URL. The comparison uses the current homepage and local, licensed fonts. It does not change the production headline. Rebuild with `python3 navrhy/pismo/build.py` after updating the homepage; see that folder's README for font sources and maintenance.
