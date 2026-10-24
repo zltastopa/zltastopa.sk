@@ -1,4 +1,5 @@
 /* Žltá stopa promotional homepage. Real HTML, native links, replaceable images. */
+@font-face{font-family:Sora;src:url('./sora-extrabold.ttf') format('truetype');font-weight:800;font-display:swap}
 @font-face{font-family:Public Sans;src:url('./public-sans-regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Public Sans;src:url('./public-sans-bold.ttf') format('truetype');font-weight:700 900;font-display:swap}
 :root{--yellow:var(--stopa-color-brand-500,#ffc400);--ink:#171713;--paper:#f6f5ef;--page:1360px;--gutter:clamp(22px,4.5vw,80px)}
@@ -166,3 +167,11 @@
  .board-paper.is-settling{animation:board-settle 1150ms ease-in-out 1}
  .board-paper.is-settling .paper-action{animation:board-settle-action 1150ms ease-in-out 1}
 }
+
+/* Selected headline: Sora ExtraBold, option 04. No runtime fitting required. */
+.hero h1{font-family:Sora,'Public Sans',Arial,sans-serif;font-weight:800;font-synthesis:none;letter-spacing:-.055em;line-height:1.03}
+.hero h1 .hero-line{display:block;white-space:nowrap;width:max-content}
+.hero h1>.hero-line.highlight{display:block;line-height:1.2}
+.hero h1 .word-space{display:inline-block;width:.24em}
+@media(min-width:761px) and (max-width:1150px){.hero h1{font-size:clamp(40px,5.25vw,61px)}}
+@media(max-width:370px){.hero h1{font-size:40px}}
